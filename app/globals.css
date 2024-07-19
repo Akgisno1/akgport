@@ -1,11 +1,11 @@
-@import url('https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap');
-@import url('https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap');
+@import url("https://fonts.googleapis.com/css2?family=Oxanium:wght@200..800&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
 @tailwind base;
-  @tailwind components;
-  @tailwind utilities;
+@tailwind components;
+@tailwind utilities;
 
-  
 @layer base {
   :root {
     --background: 0 0% 100%;
@@ -52,28 +52,3 @@
     --ring: 24 5.7% 82.9%;
   }
 }
-
-::-webkit-scrollbar {
-  width: 6px;
-  border: 3px solid transparent;
-  
-}
-
-/* Track */
-::-webkit-scrollbar-track {
-  background: rgb(23 37 84);
-}
-
-/* Handle */
-::-webkit-scrollbar-thumb {
-  background:linear-gradient(rgb(147 197 253),rgb(20 184 166)) ;
-  border-radius: 10px;
-  
-}
-
-/* Handle on hover */
-::-webkit-scrollbar-thumb:hover {
-  background: rgb(220 252 231);
-}
-
-/* Handle when dragging */

@@ -1,0 +1,24 @@
+/* styles/scrollbar.css */
+
+/* Scrollbar container */
+::-webkit-scrollbar {
+  width: 8px;
+  /* This sets the overall scrollbar background */
+}
+
+/* Scrollbar thumb (the actual scrolling element) */
+::-webkit-scrollbar-thumb {
+  background: linear-gradient(white, rgb(20, 184, 166));
+  border-radius: 10px;
+}
+
+/* Scrollbar thumb when hovered */
+::-webkit-scrollbar-thumb:active {
+  background: #f59e0b;
+}
+
+/* Scrollbar track (the area the scrollbar slides in) */
+::-webkit-scrollbar-track {
+  background: rgb(23 37 84); /* Ensures the track is transparent */
+  /* Applies a backdrop filter with zero blur */
+}
