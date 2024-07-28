@@ -10,7 +10,7 @@ import { AuroraBackground } from "@/components/ui/aurora-background";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
+import { Link } from "react-scroll";
 import Image from "next/image";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -104,7 +104,7 @@ export default function Page() {
 
   const Akg = ["A", "K", "G", "."];
   return (
-    <div className="relative w-full overflow-x-hidden h-screen  overflow-y-scroll ">
+    <div className="relative w-full overflow-x-hidden">
       <div className="TheAkg opacity-0  fixed top-1 left-[-5vw] max-md:left-[-15vw] w-fit  z-30 p-2 flex flex-col items-center justify-center   text-white  font-rubik font-extrabold text-3xl">
         {Akg.map((e) => (
           <p className="Akg" key={e}>
@@ -131,7 +131,10 @@ export default function Page() {
             onClick={() => {
               setIsOpen(false);
             }}
-            href="#home"
+            to="home"
+            spy={true}
+            duration={500}
+            smooth={true}
             className=" hover:text-white hover:scale-110 "
           >
             Home
@@ -140,7 +143,10 @@ export default function Page() {
             onClick={() => {
               setIsOpen(false);
             }}
-            href="#skills"
+            to="skills"
+            spy={true}
+            duration={500}
+            smooth={true}
             className="  hover:text-white hover:scale-110 "
           >
             Skills
@@ -149,7 +155,10 @@ export default function Page() {
             onClick={() => {
               setIsOpen(false);
             }}
-            href="#projects"
+            to="projects"
+            spy={true}
+            duration={500}
+            smooth={true}
             className=" hover:text-white hover:scale-110 "
           >
             Projects
@@ -158,7 +167,10 @@ export default function Page() {
             onClick={() => {
               setIsOpen(false);
             }}
-            href="#education"
+            to="education"
+            spy={true}
+            duration={500}
+            smooth={true}
             className=" hover:text-white hover:scale-110 "
           >
             Education
@@ -167,22 +179,25 @@ export default function Page() {
             onClick={() => {
               setIsOpen(false);
             }}
-            href="#contact"
+            to="contact"
+            spy={true}
+            duration={500}
+            smooth={true}
             className=" hover:text-white hover:scale-110 "
           >
             Contact
           </Link>
         </div>
       </div>
-      <div className="snap-start">
+      <div className="" id="home">
         <AuroraBackground showRadialGradient={true}>
           <Home />
         </AuroraBackground>
       </div>
-      <div className="snap-start">
+      <div className="" id="skills">
         <Skills />
       </div>
-      <div className="snap-start">
+      <div className="" id="projects">
         <Projects />
       </div>
     </div>

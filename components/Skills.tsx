@@ -109,12 +109,9 @@ const Skills = () => {
   const [show, setShow] = useState(frontend);
 
   return (
-    <div
-      id="skills"
-      className="flex flex-col h-[100vh] w-full bg-blue-950 text-white py-10 px-20 max-sm:p-10"
-    >
-      <div className="realtive flex flex-row max-sm:flex-col h-[100%] py-10">
-        <div className="h-[100%] w-[60%] max-sm:w-full flex flex-col max-sm:absolute max-sm:z-10  ">
+    <div className="flex flex-col h-[100vh] w-full bg-blue-950 text-white py-10 px-20 max-sm:p-10">
+      <div className="relative flex flex-row max-sm:flex-col h-[100%] py-10">
+        <div className="h-[100%] w-[60%] max-sm:w-[100%] flex flex-col items-start max-sm:absolute max-sm:z-10  ">
           <div className="pageTitle">
             <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
               <p className="text-8xl font-semibold bg-clip-text max-sm:text-6xl font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">
@@ -153,19 +150,19 @@ const Skills = () => {
               Others
             </div>
           </div>
-          <div className="flex items-center flex-wrap gap-6  mt-10 font-oxo">
+          <div className="  w-full flex flex-wrap gap-6  mt-10 max-sm:justify-center max-sm:items-center font-oxo ">
             {show.names.map((name, i) => (
               <p
                 key={i}
-                className="skillnames flex justify-center p-3 items-center text-2xl hover:glow-text"
+                className="skillnames  py-3 items-center text-2xl max-sm:xl  hover:glow-text"
               >
                 {name}
               </p>
             ))}
           </div>
         </div>
-        <div className="h-[100%] w-[40%] max-sm:w-[100%] max-sm:opacity-50 max-sm:pointer-events-none">
-          <div className=" flex h-full w-full max-w-[32rem] items-center justify-centermax-sm:items-end ">
+        <div className="h-[100%] w-[40%] max-sm:w-[100%] max-sm:opacity-50 max-sm:pointer-events-none justify-centermax-sm:items-end">
+          <div className=" flex h-full w-full max-w-[32rem] items-center  ">
             <IconCloud iconSlugs={show.icons} />
           </div>
         </div>

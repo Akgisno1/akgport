@@ -6,7 +6,7 @@ import ShinyButton from "@/components/magicui/shiny-button";
 
 const Home = () => {
   return (
-    <div className="relative w-[100vw] h-[100vh]  overflow-y-hidden">
+    <div className="relative w-[100vw] h-[100vh]  overflow-y-hidden overflow-x-hidden">
       {/* <div className="w-full h-[100vh]  z-10 absolute top-0 text-[40vw] border-2 bg-indigo-950 border-white font-tiny font-extrabold text-green-500 ">
             <div className="flex flex-row">
             <div className=" w-1/6 bg-indigo-950" ></div>
@@ -19,11 +19,11 @@ const Home = () => {
             <div className="flex h-full justify-center items-center border-2 border-black"><p className="z-20 ">hello!</p></div>
             
       </div> */}
-      <div id="home" className=" w-full  h-full flex flex-col z-0 ">
+      <div className=" w-full  h-full flex flex-col z-0 ">
         <div className="">
           <Navbar />
         </div>
-        <div className="h-full w-full flex flex-col justify-center overflow-hidden px-20 max-sm:px-7 text-white">
+        <div className="h-full w-full flex flex-col justify-center overflow-hidden px-20 max-sm:px-10 text-white">
           <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
             <p className="text-8xl font-semibold  bg-clip-text  max-sm:text-6xl  font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">
               Welcome to my Portfolio<span className="text-[#00CCCC]">.</span>
