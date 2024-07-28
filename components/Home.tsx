@@ -19,8 +19,10 @@ const Home = () => {
             <div className="flex h-full justify-center items-center border-2 border-black"><p className="z-20 ">hello!</p></div>
             
       </div> */}
-      <div id="home" className=" w-full   h-full flex flex-col z-0 ">
-        <Navbar />
+      <div id="home" className=" w-full  h-full flex flex-col z-0 ">
+        <div className="">
+          <Navbar />
+        </div>
         <div className="h-full w-full flex flex-col justify-center overflow-hidden px-20 max-sm:px-7 text-white">
           <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
             <p className="text-8xl font-semibold  bg-clip-text  max-sm:text-6xl  font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">
