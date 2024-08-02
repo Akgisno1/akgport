@@ -112,14 +112,14 @@ const Skills = () => {
     <div className="flex flex-col h-[100vh] w-full bg-blue-950 text-white py-10 px-20 max-sm:p-10">
       <div className="relative flex flex-row max-sm:flex-col h-[100%] py-10">
         <div className="h-[100%] w-[60%] max-sm:w-[100%] flex flex-col items-start max-sm:absolute max-sm:z-10  ">
-          <div className="pageTitle">
+          <div className="pageTitle max-sm:mb-28">
             <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
               <p className="text-8xl font-semibold bg-clip-text max-sm:text-6xl font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">
                 Skills<span className="text-[#00CCCC]">.</span>
               </p>
             </BoxReveal>
           </div>
-          <div className="flex flex-row gap-7 text-white text-3xl max-sm:text-2xl max-sm:gap-3 font-mont font-bold py-2 mt-10">
+          <div className="flex flex-row gap-7 text-white text-3xl max-sm:text-2xl max-sm:gap-3  font-mont font-bold py-2 mt-10">
             <div
               className={`${tab === "frontend" ? "bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-300" : ""} cursor-pointer`}
               onClick={() => {

@@ -14,6 +14,17 @@
     0 0 20px #00cccc,
     0 0 30px #00cccc;
 }
+/* styles.css */
+.blur-gradient-top {
+  background: linear-gradient(to bottom, transparent, transparent);
+  backdrop-filter: blur(1px); /* Adjust the blur intensity as needed */
+}
+
+.blur-gradient-bottom {
+  background: linear-gradient(to top, transparent, transparent);
+  backdrop-filter: blur(1px); /* Adjust the blur intensity as needed */
+}
+
 @layer base {
   :root {
     --background: 0 0% 100%;

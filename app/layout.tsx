@@ -9,6 +9,9 @@ const inter = Inter({ subsets: ["latin"] });
 export const metadata: Metadata = {
   title: "AkgPortfolio",
   description: "",
+  icons: {
+    icon: "/favi.png",
+  },
 };
 
 export default function RootLayout({

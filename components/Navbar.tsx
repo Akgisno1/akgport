@@ -81,13 +81,13 @@ const Navbar = () => {
             Projects
           </Link>
           <Link
-            to="education"
+            to="about"
             spy={true}
             duration={500}
             smooth={true}
             className="hover:text-white hover:scale-110"
           >
-            Education
+            About
           </Link>
           <Link
             to="contact"
