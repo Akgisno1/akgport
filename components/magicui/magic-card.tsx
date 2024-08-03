@@ -14,9 +14,9 @@ export interface MagicCardProps extends React.HTMLAttributes<HTMLDivElement> {
 export function MagicCard({
   children,
 
-  gradientSize = 200,
+  gradientSize = 600,
   gradientColor = "white",
-  gradientOpacity = 0.3,
+  gradientOpacity = 0.9,
 }: MagicCardProps) {
   const mouseX = useMotionValue(-gradientSize);
   const mouseY = useMotionValue(-gradientSize);
@@ -45,7 +45,7 @@ export function MagicCard({
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
       className={cn(
-        "group relative flex h-full w-full overflow-hidden rounded-3xl  border  text-white"
+        "group relative flex h-full w-full overflow-hidden rounded-3xl    "
       )}
     >
       <div className="relative z-10">{children}</div>

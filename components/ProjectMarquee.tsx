@@ -80,8 +80,6 @@ export function ProjectMarquee() {
           <ReviewCard key={review.name} {...review} />
         ))}
       </Marquee>
-      <div className="pointer-events-none absolute inset-x-0 top-0 h-1/6 blur-gradient-top dark:bg-background"></div>
-      <div className="pointer-events-none absolute inset-x-0 bottom-0 h-1/6 blur-gradient-bottom dark:bg-background"></div>
     </div>
   );
 }

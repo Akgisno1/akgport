@@ -10,79 +10,78 @@ import {
 import { BentoGrid, BentoCard } from "./magicui/bento-grid";
 import EmailCopy from "./EmailCopy";
 import { ProjectMarquee } from "./ProjectMarquee";
+import ResumeViewer from "./ResumeViewer";
+import Social from "./Social";
 
 const About = () => {
   const features = [
     {
       Icon: GlobeIcon,
       name: "Some More Projects",
-
       background: <ProjectMarquee />,
-      className: "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3",
+      className:
+        "lg:row-start-1 lg:row-end-4 lg:col-start-2 lg:col-end-3 sm:col-start-1 sm:col-end-3 md:col-start-1 md:col-end-2 max-sm:hidden",
     },
     {
       Icon: Pencil1Icon,
       name: "Education",
-
       background: (
         <div className="flex flex-col font-mont gap-3 h-full w-full p-3">
-          <div className="flex flex-col gap-2 ">
+          <div className="flex flex-col gap-2">
             <p className="text-xl font-oxo font-bold">Matriculation</p>
-
             <div className="flex flex-col">
               <p>CBSE</p>
               <div className="flex flex-row justify-between items-center">
-                <p>St. Aloyius School,Jabalpur</p>
+                <p>St. Aloyius School, Jabalpur</p>
                 <p className="font-oxo font-bold text-xl">89.3%</p>
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-2 ">
+          <div className="flex flex-col gap-2">
             <p className="text-xl font-oxo font-bold">Intermediate</p>
-
             <div className="flex flex-col">
               <p>CBSE</p>
               <div className="flex flex-row justify-between items-center">
-                <p>St. Aloyius School,Jabalpur</p>
+                <p>St. Aloyius School, Jabalpur</p>
                 <p className="font-oxo font-bold text-xl">90.2%</p>
               </div>
             </div>
           </div>
-          <div className="flex flex-col gap-2 ">
+          <div className="flex flex-col gap-2">
             <p className="text-xl font-oxo font-bold">Graduation</p>
-
             <div className="flex flex-col">
-              <p>Btech CSE,RGPV</p>
+              <p>Btech CSE, RGPV</p>
               <div className="flex flex-row justify-between items-center">
-                <p>GGCT,Jabalpur</p>
+                <p>GGCT, Jabalpur</p>
                 <p className="font-oxo font-bold text-xl">9 cgpa</p>
               </div>
             </div>
           </div>
         </div>
       ),
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3",
+      className:
+        "lg:col-start-1 lg:col-end-2 lg:row-start-1 lg:row-end-3 sm:col-start-1 sm:col-end-3 md:col-start-2 md:col-end-3",
     },
     {
       Icon: EnvelopeOpenIcon,
       name: "",
-
       background: <EmailCopy />,
-      className: "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4",
+      className:
+        "lg:col-start-1 lg:col-end-2 lg:row-start-3 lg:row-end-4 sm:col-start-1 sm:col-end-2 md:col-start-1 md:col-end-2",
     },
     {
       Icon: ChatBubbleIcon,
       name: "Connect on Social",
-
-      background: <img className="absolute -right-20 -top-20 opacity-60" />,
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-2",
+      background: <Social />,
+      className:
+        "lg:col-start-3 lg:col-end-3 lg:row-start-1 lg:row-end-3 sm:col-start-2 sm:col-end-3 md:col-start-3 md:col-end-4",
     },
     {
       Icon: FileTextIcon,
-      name: "Notifications",
-
-      background: <img className="absolute -right-20 -top-20 opacity-60" />,
-      className: "lg:col-start-3 lg:col-end-3 lg:row-start-2 lg:row-end-4",
+      name: "",
+      background: <ResumeViewer />,
+      className:
+        "lg:col-start-3 lg:col-end-3 lg:row-start-3 lg:row-end-4 sm:col-start-1 sm:col-end-2 md:col-start-3 md:col-end-4",
     },
   ];
 

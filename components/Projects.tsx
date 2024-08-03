@@ -13,7 +13,7 @@ gsap.registerPlugin(ScrollTrigger);
 const Projects = () => {
   useGSAP(() => {
     gsap.to(".projectspage", {
-      backgroundColor: "#10B981",
+      backgroundColor: "black",
       duration: 1,
       ease: "power1.out",
       scrollTrigger: {
@@ -52,16 +52,16 @@ const Projects = () => {
   }, []);
 
   return (
-    <div className="projectspage flex flex-col h-[100vh] overflow-x-hidden overflow-hidden bg-blue-950 text-white">
+    <div className="projectspage flex flex-col h-[100vh] overflow-x-hidden overflow-hidden bg-blue-950 text-gray-700">
       <div className="pageTitle my-5 ml-20 max-sm:ml-10">
         <BoxReveal boxColor={"#F97316"} duration={0.5}>
           <p className="text-8xl font-semibold bg-clip-text max-sm:text-6xl font-oxo text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
-            Projects<span className="text-yellow-400">.</span>
+            Projects<span className="text-yellow-500">.</span>
           </p>
         </BoxReveal>
       </div>
 
-      <div className="projects flex flex-row pl-20 pr-5 max-sm:pl-5 w-[200vw] max-sm:w-[400vw] items-center max-sm:items-center h-[80%] gap-10">
+      <div className="projects flex flex-row pl-20 pb-5 pr-5 max-sm:pl-5 w-[200vw] max-sm:w-[400vw] items-center max-sm:items-center h-[80%] gap-10">
         <div className="project1 w-[25%] h-full">
           <MagicCard>
             <div className="relative w-full h-full p-5 rounded-3xl cursor-pointer flex flex-col shadow-2xl">
@@ -69,16 +69,18 @@ const Projects = () => {
                 <img
                   src="/QueueDesk.PNG"
                   alt="QueueDesk"
-                  className="rounded-xl object-fit"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
                 />
                 <img
                   src="/QueueMob.PNG"
                   alt="QueueMob"
-                  className="rounded-xl object-fit max-sm:hidden"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out max-sm:hidden"
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2 max-sm:h-full">
-                <h1 className="font-oxo text-3xl font-bold">QueueOverFlow</h1>
+                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
+                  QueueOverFlow
+                </h1>
                 <p className="font-mont text-sm font-bold">
                   This is a FULL-STACK project using{" "}
                   <u>Next.js Server Actions</u> which features secure{" "}
@@ -127,16 +129,18 @@ const Projects = () => {
                 <img
                   src="/RentifyDesk.PNG"
                   alt="RentifyDesk"
-                  className="rounded-xl object-fit"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
                 />
                 <img
                   src="/RentifyMob.PNG"
                   alt="RentifyMob"
-                  className="rounded-xl object-fit max-sm:hidden"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out max-sm:hidden"
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2 max-sm:h-full">
-                <h1 className="font-oxo text-3xl font-bold">RENTIFY</h1>
+                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
+                  RENTIFY
+                </h1>
                 <p className="font-mont text-sm font-bold">
                   This is a <u>MERN-STACK</u> project using <u>Socket.io</u> for
                   real-time <u>chatting</u> with users, get chat{" "}
@@ -187,24 +191,24 @@ const Projects = () => {
                 <img
                   src="/AppleDesk.PNG"
                   alt="AppleDesk"
-                  className="rounded-xl object-fit"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
                 />
                 <img
                   src="/AppleMob.PNG"
                   alt="AppleMob"
-                  className="rounded-xl object-fit max-sm:hidden"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out max-sm:hidden"
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2 max-sm:h-full">
-                <h1 className="font-oxo text-3xl font-bold">
+                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
                   Iphone Landing Page
                 </h1>
                 <p className="font-mont text-sm font-bold">
-                  This is a responsive landing page for Apple's iPhone 15 Pro,
+                  This is a responsive landing page for Apple iPhone 15 Pro,
                   featuring interactive <u>3D iPhone models</u> using{" "}
                   <u>Three.js</u> that can be customized. The page incorporates{" "}
                   <u>GSAP animations</u> and <u>scroll triggers</u> to create a{" "}
-                  smooth and engaging user experience. It highlights Apple's
+                  smooth and engaging user experience. It highlights Apple
                   technology with dynamic visuals and transitions that work
                   seamlessly across all devices.
                 </p>
@@ -242,30 +246,32 @@ const Projects = () => {
         <div className="project4 w-[25%] h-full">
           <MagicCard>
             <div className="relative w-full h-full p-5 rounded-3xl cursor-pointer flex flex-col shadow-2xl">
-              <div className="flex flex-row gap-2 h-[47%] w-fit mb-3 overflow-hidden justify-center orange-filter">
+              <div className="flex flex-row gap-2 h-[47%] w-fit mb-3 overflow-hidden justify-center ">
                 <img
                   src="/aura4.PNG"
                   alt="aura4"
-                  className="rounded-xl object-fit"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
                 />
                 <img
                   src="/aura1.PNG"
                   alt="aura1"
-                  className="rounded-xl object-fit max-sm:hidden"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out max-sm:hidden"
                 />
                 <img
                   src="/aura2.PNG"
                   alt="aura2"
-                  className="rounded-xl object-fit"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
                 />
                 <img
                   src="/aura3.PNG"
                   alt="aura3"
-                  className="rounded-xl object-fit max-sm:hidden"
+                  className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out max-sm:hidden"
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2">
-                <h1 className="font-oxo text-3xl font-bold">Auro</h1>
+                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
+                  Aura
+                </h1>
                 <p className="font-mont text-sm font-bold">
                   This is a feature-rich <u>FULL-STACK</u> application built
                   with React Native, utilizing <u>Appwrite</u> for managing user
