@@ -54,9 +54,9 @@ const Projects = () => {
   return (
     <div className="projectspage flex flex-col h-[100vh] overflow-x-hidden overflow-hidden bg-blue-950 text-gray-700">
       <div className="pageTitle my-5 ml-20 max-sm:ml-10">
-        <BoxReveal boxColor={"#F97316"} duration={0.5}>
-          <p className="text-8xl font-semibold bg-clip-text max-sm:text-6xl font-oxo text-transparent bg-gradient-to-r from-yellow-400 to-orange-500">
-            Projects<span className="text-yellow-500">.</span>
+        <BoxReveal boxColor={"white"} duration={0.5}>
+          <p className="text-8xl font-semibold bg-clip-text max-sm:text-6xl font-oxo text-transparent bg-gradient-to-r from-white to-gray-500">
+            Projects<span className="text-white">.</span>
           </p>
         </BoxReveal>
       </div>
@@ -78,7 +78,7 @@ const Projects = () => {
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2 max-sm:h-full">
-                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
+                <h1 className="font-oxo text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 transition-all duration-500 ease-in-out">
                   QueueOverFlow
                 </h1>
                 <p className="font-mont text-sm font-bold">
@@ -110,7 +110,7 @@ const Projects = () => {
                 </div>
                 <Link href="https://queue-over-flow.vercel.app/" legacyBehavior>
                   <a
-                    className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold py-2 px-4 rounded font-mont w-1/3 mt-2 flex items-center justify-center"
+                    className="bg-gradient-to-r from-white to-gray-300 hover:text-white text-black hover:bg-gradient-to-r hover:from-gray-700 hover:to-black font-bold py-2 px-4 rounded font-mont w-1/3 mt-2 flex items-center justify-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -138,7 +138,7 @@ const Projects = () => {
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2 max-sm:h-full">
-                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
+                <h1 className="font-oxo text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 transition-all duration-500 ease-in-out">
                   RENTIFY
                 </h1>
                 <p className="font-mont text-sm font-bold">
@@ -172,7 +172,7 @@ const Projects = () => {
                 </div>
                 <Link href="https://rentify-8r7z.onrender.com/" legacyBehavior>
                   <a
-                    className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold py-2 px-4 rounded font-mont w-1/3 mt-2 flex items-center justify-center"
+                    className="bg-gradient-to-r from-white to-gray-300 hover:text-white text-black hover:bg-gradient-to-r hover:from-gray-700 hover:to-black font-bold py-2 px-4 rounded font-mont w-1/3 mt-2 flex items-center justify-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -200,7 +200,7 @@ const Projects = () => {
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2 max-sm:h-full">
-                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
+                <h1 className="font-oxo text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 transition-all duration-500 ease-in-out">
                   Iphone Landing Page
                 </h1>
                 <p className="font-mont text-sm font-bold">
@@ -231,7 +231,7 @@ const Projects = () => {
                 </div>
                 <Link href="https://apple-ashy.vercel.app/" legacyBehavior>
                   <a
-                    className="bg-gradient-to-r from-yellow-400 to-orange-500 text-white font-bold py-2 px-4 rounded font-mont w-1/3 mt-2 flex items-center justify-center"
+                    className="bg-gradient-to-r from-white to-gray-300 hover:text-white text-black hover:bg-gradient-to-r hover:from-gray-700 hover:to-black font-bold py-2 px-4 rounded font-mont w-1/3 mt-2 flex items-center justify-center"
                     target="_blank"
                     rel="noopener noreferrer"
                   >
@@ -269,7 +269,7 @@ const Projects = () => {
                 />
               </div>
               <div className="justify-between flex flex-col h-1/2">
-                <h1 className="font-oxo text-3xl font-bold hover:bg-clip-text hover:text-transparent hover:bg-gradient-to-r hover:from-yellow-400 hover:to-orange-500 transition-all duration-500 ease-in-out">
+                <h1 className="font-oxo text-3xl font-bold bg-clip-text text-transparent bg-gradient-to-r from-white to-gray-300 transition-all duration-500 ease-in-out">
                   Aura
                 </h1>
                 <p className="font-mont text-sm font-bold">
