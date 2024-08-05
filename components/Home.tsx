@@ -1,8 +1,7 @@
 import React from "react";
 import Navbar from "./Navbar";
-import { Button } from "@/components/ui/button";
+
 import BoxReveal from "@/components/magicui/box-reveal";
-import ShinyButton from "@/components/magicui/shiny-button";
 
 const Home = () => {
   return (
