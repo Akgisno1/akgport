@@ -24,7 +24,7 @@ const reviews = [
   {
     name: "Threads Clone",
     link: "https://threads-eight-sand.vercel.app/",
-    body: "A Practice Project for learning Next.js 13 and Tailwind CSS, with Next.js server actions. It's a clone of the popular social media platform Threads.",
+    body: "A Practice Project for learning Next.js 13 and Tailwind CSS, with Next.js server actions. It&apos;s a clone of the popular social media platform Threads.",
     img: "https://avatar.vercel.sh/jill",
   },
 ];

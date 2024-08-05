@@ -97,13 +97,13 @@ const Resume = () => {
           <div className="bg-gray-100 p-4 rounded-lg shadow-md">
             <h3 className="text-xl font-bold">Iphone Landing Page</h3>
             <p className="mt-1">
-              A responsive landing page for Apple's iPhone 15 Pro, featuring
-              interactive <strong>3D iPhone models</strong> with{" "}
+              A responsive landing page for Apple&apos;s iPhone 15 Pro,
+              featuring interactive <strong>3D iPhone models</strong> with{" "}
               <strong>Three.js</strong>. Incorporates{" "}
               <strong>GSAP animations</strong> and{" "}
               <strong>scroll triggers</strong> for smooth user experience.
-              Highlights Apple's technology with dynamic visuals and transitions
-              across devices.
+              Highlights Apple&apos;s technology with dynamic visuals and
+              transitions across devices.
             </p>
             <a
               href="https://apple-ashy.vercel.app/"
