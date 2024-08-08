@@ -98,7 +98,7 @@ const About = () => {
       <div className="flex h-full   mt-5  items-center">
         <BentoGrid className="lg:grid-rows-3 max-sm:grid-cols-1 max-sm:auto-rows-auto w-full h-full">
           {features.map((feature) => (
-            <BentoCard key={feature.name} {...feature} />
+            <BentoCard key={feature.className} {...feature} />
           ))}
         </BentoGrid>
       </div>
