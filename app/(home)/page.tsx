@@ -1,3 +1,5 @@
+"use client";
+
 import Home from "@/components/Home";
 
 import React, { useState, useEffect, useRef } from "react";
