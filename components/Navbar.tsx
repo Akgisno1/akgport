@@ -15,17 +15,10 @@ const Navbar = () => {
       y: "10vh",
       duration: 1,
       delay: 1,
-
-      scrollTrigger: {
-        trigger: ".navbox",
-        scroller: "body",
-        start: "top 0%",
-        toggleActions: "play none none reverse",
-      },
     });
     tl.from(".navtitles", {
       duration: 1,
-      delay: 1.5,
+      delay: 1,
       y: "-10vh",
       opacity: 0,
     });

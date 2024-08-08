@@ -131,49 +131,51 @@ const Skills = () => {
               </p>
             </BoxReveal>
           </div>
-          <div className="flex flex-row gap-7 text-white text-3xl max-sm:text-2xl max-sm:gap-3 font-mont font-bold py-2 mt-10">
-            <div
-              className={`${
-                tab === "frontend"
-                  ? "bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-300"
-                  : ""
-              } cursor-pointer`}
-              onClick={() => handleTabChange("frontend", frontend)}
-            >
-              FrontEnd
-            </div>
-
-            <div
-              className={`${
-                tab === "backend"
-                  ? "bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-300"
-                  : ""
-              } cursor-pointer`}
-              onClick={() => handleTabChange("backend", backend)}
-            >
-              BackEnd
-            </div>
-
-            <div
-              className={`${
-                tab === "other"
-                  ? "bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-300"
-                  : ""
-              } cursor-pointer`}
-              onClick={() => handleTabChange("other", others)}
-            >
-              Others
-            </div>
-          </div>
-          <div className="w-full flex flex-wrap gap-6 mt-10 max-sm:justify-center max-sm:items-center font-oxo">
-            {show.names.map((name, i) => (
-              <p
-                key={i}
-                className="skillnames py-3 items-center text-2xl max-sm:xl hover:glow-text"
+          <div className="flex justify-center flex-col h-full w-full">
+            <div className="flex flex-row gap-7 text-white text-3xl max-sm:text-2xl max-sm:gap-3 font-mont font-bold py-2 ">
+              <div
+                className={`${
+                  tab === "frontend"
+                    ? "bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-300"
+                    : ""
+                } cursor-pointer`}
+                onClick={() => handleTabChange("frontend", frontend)}
               >
-                {name}
-              </p>
-            ))}
+                FrontEnd
+              </div>
+
+              <div
+                className={`${
+                  tab === "backend"
+                    ? "bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-300"
+                    : ""
+                } cursor-pointer`}
+                onClick={() => handleTabChange("backend", backend)}
+              >
+                BackEnd
+              </div>
+
+              <div
+                className={`${
+                  tab === "other"
+                    ? "bg-clip-text text-transparent bg-gradient-to-r from-teal-500 to-teal-300"
+                    : ""
+                } cursor-pointer`}
+                onClick={() => handleTabChange("other", others)}
+              >
+                Others
+              </div>
+            </div>
+            <div className="w-full flex flex-wrap gap-6 mt-10 max-sm:justify-center max-sm:items-center font-oxo">
+              {show.names.map((name, i) => (
+                <p
+                  key={i}
+                  className="skillnames py-3 items-center text-2xl max-sm:xl hover:glow-text"
+                >
+                  {name}
+                </p>
+              ))}
+            </div>
           </div>
         </div>
         <div className="h-[100%] w-[40%] max-sm:w-[100%] max-sm:opacity-50 max-sm:pointer-events-none justify-center max-sm:items-end">
