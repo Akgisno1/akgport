@@ -21,7 +21,8 @@ export default function Page() {
   const [isOpen, setIsOpen] = useState(false);
 
   useGSAP(() => {
-    if (window.innerWidth <= 768) {
+    const isMobile = window.matchMedia("(max-width: 768px)").matches;
+    if (isMobile) {
       gsap.to(".TheAkg", {
         x: "15vw",
         opacity: 1,
