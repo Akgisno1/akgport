@@ -86,7 +86,7 @@ const About = () => {
   ];
 
   return (
-    <div className="aboutpage flex flex-col h-[100vh] w-full bg-blue-950 text-white py-10 px-20 max-sm:px-10 ">
+    <div className="aboutpage flex flex-col min-h-[100vh] w-full bg-blue-950 text-white py-10 px-20 max-sm:px-10 ">
       <div className="pageTitle">
         <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
           <p className="text-8xl font-semibold bg-clip-text max-sm:text-5xl font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">

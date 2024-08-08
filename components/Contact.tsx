@@ -46,6 +46,7 @@ const Contact: React.FC = () => {
       toast({
         title: "Successfully uploaded message",
       });
+      form.reset(); // Reset the form after successful submission
     } catch (error) {
       toast({
         title: "Failed to upload message",
@@ -53,7 +54,6 @@ const Contact: React.FC = () => {
       });
     }
   };
-
   const formRef = useRef<HTMLFormElement>(null);
 
   useEffect(() => {
@@ -71,11 +71,11 @@ const Contact: React.FC = () => {
       );
 
       button.addEventListener("mouseenter", () => {
-        gsap.to(button, { scale: 1.1, duration: 0.2 });
+        gsap.to(button, { scale: 1.1, duration: 0.5 });
       });
 
       button.addEventListener("mouseleave", () => {
-        gsap.to(button, { scale: 1, duration: 0.2 });
+        gsap.to(button, { scale: 1, duration: 0.5 });
       });
     });
   }, []);
@@ -111,7 +111,7 @@ const Contact: React.FC = () => {
             </AccordionItem>
             <AccordionItem value="item-2">
               <AccordionTrigger className="text-2xl max-sm:text-xl  flex-start">
-                Want me to make you a Website?
+                Freelance Opportunities
               </AccordionTrigger>
               <AccordionContent className="text-xl max-sm:text-lg">
                 I&apos;m open to freelance opportunities. Let&apos;s discuss how
@@ -120,7 +120,7 @@ const Contact: React.FC = () => {
             </AccordionItem>
             <AccordionItem value="item-3">
               <AccordionTrigger className="text-2xl max-sm:text-xl flex-start">
-                Development Tools and Technologies
+                Tools and Technologies
               </AccordionTrigger>
               <AccordionContent className="text-xl max-sm:text-lg">
                 If you have questions about the tools and technologies I use, or

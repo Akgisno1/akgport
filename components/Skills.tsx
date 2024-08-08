@@ -131,7 +131,7 @@ const Skills = () => {
               </p>
             </BoxReveal>
           </div>
-          <div className="flex justify-center flex-col h-full w-full">
+          <div className="flex md:justify-center flex-col h-full w-full">
             <div className="flex flex-row gap-7 text-white text-3xl max-sm:text-2xl max-sm:gap-3 font-mont font-bold py-2 ">
               <div
                 className={`${
