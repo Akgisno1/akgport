@@ -1,4 +1,3 @@
-"use client";
 import { ReactNode } from "react";
 
 import { cn } from "@/lib/utils";
@@ -42,7 +41,7 @@ const BentoCard = ({
     <div className="h-full w-full flex justify-center items-center">
       {background}
     </div>
-    {window.innerWidth > 768 && (
+    {window.innerWidth > 640 && (
       <div className="absolute backdrop-blur-sm pointer-events-none z-10 w-full items-center bottom-0 flex transform-gpu flex-row justify-between gap-1 p-4 transition-all duration-300 group-hover:translate-y-36">
         {name && (
           <Icon className="h-12 w-12 origin-left transform-gpu text-[#00CCCC] transition-all duration-300 ease-in-out " />
