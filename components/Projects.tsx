@@ -247,22 +247,22 @@ const Projects = () => {
             <div className="relative w-full h-full p-5 rounded-3xl cursor-pointer flex flex-col shadow-2xl">
               <div className="flex flex-row gap-2 h-[47%] w-fit mb-3 overflow-hidden justify-center ">
                 <img
-                  src="/aura4.PNG"
+                  src="/aura4.png"
                   alt="aura4"
                   className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
                 />
                 <img
-                  src="/aura1.PNG"
+                  src="/aura1.png"
                   alt="aura1"
                   className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out max-sm:hidden"
                 />
                 <img
-                  src="/aura2.PNG"
+                  src="/aura2.png"
                   alt="aura2"
                   className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out"
                 />
                 <img
-                  src="/aura3.PNG"
+                  src="/aura3.png"
                   alt="aura3"
                   className="rounded-xl object-fit grayscale hover:grayscale-0 transition-all duration-300 ease-in-out max-sm:hidden"
                 />
