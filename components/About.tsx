@@ -87,20 +87,22 @@ const About = () => {
 
   return (
     <div className="aboutpage flex flex-col min-h-[100vh] w-full bg-blue-950 text-white py-10 px-20 max-sm:px-10 ">
-      <div className="pageTitle">
-        <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
-          <p className="text-8xl font-semibold bg-clip-text max-sm:text-5xl font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">
-            About Me<span className="text-teal-400">.</span>
-          </p>
-        </BoxReveal>
-      </div>
+      <div className="flex flex-col h-full w-full gap-10">
+        <div className="pageTitle">
+          <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
+            <p className="text-8xl font-semibold bg-clip-text max-sm:text-5xl font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">
+              About Me<span className="text-teal-400">.</span>
+            </p>
+          </BoxReveal>
+        </div>
 
-      <div className="flex h-full   mt-5  items-center">
-        <BentoGrid className="lg:grid-rows-3 max-sm:grid-cols-1 max-sm:auto-rows-auto w-full h-full">
-          {features.map((feature) => (
-            <BentoCard key={feature.className} {...feature} />
-          ))}
-        </BentoGrid>
+        <div className="h-[80vh]">
+          <BentoGrid className=" ">
+            {features.map((feature) => (
+              <BentoCard key={feature.className} {...feature} />
+            ))}
+          </BentoGrid>
+        </div>
       </div>
     </div>
   );

@@ -90,7 +90,7 @@ const Contact: React.FC = () => {
         </BoxReveal>
       </div>
 
-      <div className="flex flex-row-reverse max-sm:flex-col-reverse h-full w-full">
+      <div className="flex flex-row-reverse max-sm:flex-col-reverse h-full w-full items-center">
         <div className="font-oxo text-white flex flex-col  justify-center items-center w-[50%] h-full max-sm:w-full max-sm:h-1/2">
           <h2 className="text-5xl font-semibold  w-full max-sm:text-3xl">
             Engage With Me About:
@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="w-[90%] max-sm:w-full text-mont text-2xl max-sm:text-lg gap-3 flex flex-col"
+              className="w-[90%] text-mont text-2xl max-sm:text-lg gap-3 flex flex-col"
               ref={formRef}
             >
               <FormField
@@ -189,7 +189,7 @@ const Contact: React.FC = () => {
                       <Textarea
                         placeholder="Your Message"
                         {...field}
-                        className="text-2xl max-sm:text-lg h-[10vh] text-teal-500 placeholder-teal-500 bg-transparent hover:bg-white border-teal-500 border-2  focus:text-white focus:bg-teal-500 focus:ring-2 focus:ring-white focus:border-white focus:outline-none transition-all duration-300 ease-in-out hover:scale-105 hover:h-[20vh] max-sm:hover:h-[15vh] font-semibold p-4 resize-none leading-relaxed scrollbar-hide"
+                        className="text-2xl max-sm:text-lg h-[11vh] text-teal-500 placeholder-teal-500 bg-transparent hover:bg-white border-teal-500 border-2  focus:text-white focus:bg-teal-500 focus:ring-2 focus:ring-white focus:border-white focus:outline-none transition-all duration-300 ease-in-out hover:scale-105 hover:h-[20vh] max-sm:hover:h-[15vh] font-semibold p-4 resize-none leading-relaxed scrollbar-hide"
                       />
                     </FormControl>
                     <FormMessage />
@@ -198,7 +198,7 @@ const Contact: React.FC = () => {
               />
               <Button
                 type="submit"
-                className="bg-teal-500 font-oxo text-2xl w-[30%] py-3 text-white hover:bg-teal-600 focus:ring-2 focus:ring-white focus:ring-opacity-50 hover:h-[7vh] max-sm:hover:h-[5vh]"
+                className="bg-teal-500 font-oxo text-2xl w-[30%] py-3 text-white hover:bg-teal-600 focus:ring-2 focus:ring-white focus:ring-opacity-50 hover:scale-110  max-sm:hover:h-[5vh] h-[7vh]"
               >
                 Submit
               </Button>

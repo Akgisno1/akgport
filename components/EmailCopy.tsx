@@ -15,9 +15,11 @@ export default function EmailCopy() {
   const email = "anshulkumargodiwar2001@gmail.com";
   return (
     <div className="flex flex-col gap-2 justify-center items-center h-full w-full font-mont py-2">
-      <h2 className="font-bold text-2xl">Start a Project With Me </h2>
+      <h2 className="font-bold text-2xl max-sm:text-xl">
+        Start a Project With Me{" "}
+      </h2>
       <CopyToClipboard text={email} onCopy={onCopyText}>
-        <button className="bg-teal-500 hover:bg-white hover:text-teal-500 text-white font-bold py-2 px-4 rounded">
+        <button className="bg-teal-500 justify-center flex hover:bg-white hover:text-teal-500 text-white font-bold py-2 px-4 rounded">
           {copyStatus ? <p>Copied to clipboard!</p> : <p>Copy my Email</p>}
         </button>
       </CopyToClipboard>

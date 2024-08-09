@@ -15,19 +15,21 @@ const ResumeViewer = () => {
 
   return (
     <div className=" h-full w-full flex flex-col items-center p-6 justify-center ">
-      <h1 className="text-2xl  mb-4 font-mont font-bold">Checkout My Resume</h1>
-      <div className=" flex flex-row gap-2">
+      <h1 className="text-2xl  mb-4 font-mont font-bold max-sm:text-xl">
+        Checkout My Resume
+      </h1>
+      <div className=" flex flex-row max-sm:flex-col gap-2">
         <a
           href={resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
-          className="hover:bg-teal-500 bg-white text-teal-500 hover:text-white font-bold py-2 px-4 rounded"
+          className="bg-teal-500 justify-center flex hover:bg-white hover:text-teal-500 text-white font-bold py-2 px-4 rounded"
         >
           View Resume
         </a>
         <button
           onClick={handleDownload}
-          className="hover:bg-teal-500 bg-white text-teal-500 hover:text-white font-bold py-2 px-4 rounded"
+          className="bg-teal-500 justify-center flex hover:bg-white hover:text-teal-500 text-white font-bold py-2 px-4 rounded"
         >
           Download Resume
         </button>
