@@ -130,7 +130,7 @@ const Skills = () => {
               </p>
             </BoxReveal>
           </div>
-          <div className="flex md:justify-center flex-col h-full w-full">
+          <div className="flex md:justify-center max-sm:justify-start flex-col h-full w-full">
             <div className="flex flex-row gap-7 text-white text-3xl max-sm:text-2xl max-sm:gap-3 font-mont font-bold py-2 ">
               <div
                 className={`${
@@ -165,11 +165,11 @@ const Skills = () => {
                 Others
               </div>
             </div>
-            <div className="w-full flex flex-wrap gap-6 mt-10 max-sm:justify-center max-sm:items-center font-oxo">
+            <div className="w-full flex flex-wrap gap-6 max-sm:gap-3 mt-10 max-sm:justify-center max-sm:items-center font-oxo">
               {show.names.map((name, i) => (
                 <p
                   key={i}
-                  className="skillnames py-3 items-center text-2xl max-sm:xl hover:glow-text"
+                  className="skillnames py-3 items-center text-2xl max-sm:lg hover:glow-text"
                 >
                   {name}
                 </p>

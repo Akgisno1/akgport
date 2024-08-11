@@ -34,12 +34,6 @@ export default function Page() {
         ease: "power1.out",
         duration: 1,
       });
-      gsap.to(".Akg", {
-        rotateY: 180,
-        stagger: 0.2,
-        repeat: -1,
-        yoyo: true,
-      });
     } else {
       gsap.to(".TheAkg", {
         x: "5vw",
@@ -67,13 +61,6 @@ export default function Page() {
           start: "center 0%",
           toggleActions: "restart none none reverse",
         },
-      });
-
-      gsap.to(".Akg", {
-        rotateY: 180,
-        stagger: 0.2,
-        repeat: -1,
-        yoyo: true,
       });
     }
   }, [isOpen]);

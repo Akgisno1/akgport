@@ -18,7 +18,7 @@ const Navbar = () => {
     });
     tl.from(".navtitles", {
       duration: 1,
-      delay: 1,
+
       y: "-10vh",
       opacity: 0,
     });

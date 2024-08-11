@@ -96,7 +96,7 @@ const About = () => {
           </BoxReveal>
         </div>
 
-        <div className="h-[80vh]">
+        <div className="md:h-[80vh] ">
           <BentoGrid className=" ">
             {features.map((feature) => (
               <BentoCard key={feature.className} {...feature} />

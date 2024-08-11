@@ -144,7 +144,7 @@ const Contact: React.FC = () => {
           <Form {...form}>
             <form
               onSubmit={form.handleSubmit(onSubmit)}
-              className="w-[90%] text-mont text-2xl max-sm:text-lg gap-3 flex flex-col"
+              className="w-[90%] max-sm:w-[100%] text-mont text-2xl max-sm:text-lg gap-3 flex flex-col"
               ref={formRef}
             >
               <FormField
@@ -198,7 +198,7 @@ const Contact: React.FC = () => {
               />
               <Button
                 type="submit"
-                className="bg-teal-500 font-oxo text-2xl w-[30%] py-3 text-white hover:bg-teal-600 focus:ring-2 focus:ring-white focus:ring-opacity-50 hover:scale-110  max-sm:hover:h-[5vh] h-[7vh]"
+                className="bg-teal-500 font-oxo text-2xl w-[30%] py-3 max-sm:w-[40%] text-white hover:bg-teal-600 focus:ring-2 focus:ring-white focus:ring-opacity-50 hover:scale-110  max-sm:hover:h-[5vh] h-[7vh]"
               >
                 Submit
               </Button>
