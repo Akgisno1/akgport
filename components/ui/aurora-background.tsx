@@ -17,33 +17,32 @@ export const AuroraBackground = ({
     <main>
       <div
         className={cn(
-          "relative flex flex-col  h-[100vh]  items-center justify-center bg-blue-950  transition-bg",
+          "relative flex flex-col h-[100vh] items-center justify-center bg-white dark:bg-blue-950 text-slate-950 dark:text-white transition-colors duration-300",
           className
         )}
         {...props}
       >
-        <div className=" inset-0 overflow-hidden">
+        <div className="absolute inset-0 overflow-hidden">
           <div
-            //   I'm sorry but this is what peak developer performance looks like // trigger warning
             className={cn(
               `
-            [--white-gradient:repeating-linear-gradient(260deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
-            [--dark-gradient:repeating-linear-gradient(260deg,var(--black)_0%,var(--black)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--black)_16%)]
-            [--aurora:repeating-linear-gradient(260deg,var(--green-700)_10%,var(--emerald-500)_15%,var(--green-300)_20%,var(--emerald-700)_25%,var(--green-400)_30%)]
-            [background-image:var(--white-gradient),var(--aurora)]
-            dark:[background-image:var(--dark-gradient),var(--aurora)]
-            [background-size:300%,_200%]
-            [background-position:50%_50%,50%_50%]
-            filter blur-[10px] invert dark:invert-0
-            after:content-[""] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] 
-            after:dark:[background-image:var(--dark-gradient),var(--aurora)]
-            after:[background-size:200%,_100%] 
-            after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
-            pointer-events-none
-            absolute -inset-[10px] opacity-50 will-change-transform`,
+              [--white-gradient:repeating-linear-gradient(100deg,var(--white)_0%,var(--white)_7%,var(--transparent)_10%,var(--transparent)_12%,var(--white)_16%)]
+              [--dark-gradient:repeating-linear-gradient(100deg,#020617_0%,#020617_7%,var(--transparent)_10%,var(--transparent)_12%,#020617_16%)]
+              [--aurora:repeating-linear-gradient(100deg,var(--emerald-500,#10b981)_10%,var(--lime-400,#a3e635)_15%,var(--emerald-400,#34d399)_20%,var(--lime-300,#bef264)_25%,var(--emerald-600,#059669)_30%)]
+              [background-image:var(--white-gradient),var(--aurora)]
+              dark:[background-image:var(--dark-gradient),var(--aurora)]
+              [background-size:300%,_200%]
+              [background-position:50%_50%,50%_50%]
+              filter blur-[10px] invert dark:invert-0
+              after:content-[""] after:absolute after:inset-0 after:[background-image:var(--white-gradient),var(--aurora)] 
+              after:dark:[background-image:var(--dark-gradient),var(--aurora)]
+              after:[background-size:200%,_100%] 
+              after:animate-aurora after:[background-attachment:fixed] after:mix-blend-difference
+              pointer-events-none
+              absolute -inset-[10px] opacity-85 will-change-transform`,
 
               showRadialGradient &&
-                `[mask-image:radial-gradient(ellipse_at_0%_0%,black_10%,var(--transparent)_70%)]`
+                `[mask-image:radial-gradient(ellipse_at_100%_0%,black_10%,var(--transparent)_80%)]`
             )}
           ></div>
         </div>

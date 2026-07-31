@@ -2,9 +2,18 @@
 @import url("https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&family=Rubik+Mono+One&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Major+Mono+Display&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Tiny5&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Great+Vibes&family=Dancing+Script:wght@400..700&display=swap");
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.portfolio-stroke {
+  -webkit-text-stroke: 0.15vw #000000;
+}
+
+.dark .portfolio-stroke {
+  -webkit-text-stroke: 0.15vw #ffffff;
+}
 .hover\:glow-text:hover {
   @apply text-white; /* Apply text color utility from Tailwind */
   text-shadow:
@@ -24,6 +33,29 @@
   background: linear-gradient(to top, transparent, transparent);
   backdrop-filter: blur(1px); /* Adjust the blur intensity as needed */
 }
+
+        .moveX {
+          flex-shrink: 0;
+        }
+
+        .moveLink {
+          display: flex;
+          width: max-content;
+        }
+
+        .group:hover .moveLink {
+          animation: moveAnimation 5s linear infinite;
+        }
+
+        @keyframes moveAnimation {
+          from {
+            transform: translateX(0);
+          }
+          to {
+            transform: translateX(-50%);
+          }
+        }
+    
 
 @layer base {
   :root {
@@ -71,3 +103,19 @@
     --ring: 24 5.7% 82.9%;
   }
 }
+
+/* Magic UI View Transition animation for theme toggler */
+::view-transition-old(root),
+::view-transition-new(root) {
+  animation: none;
+  mix-blend-mode: normal;
+}
+
+[data-magicui-theme-vt="active"]::view-transition-old(root) {
+  z-index: 1;
+}
+
+[data-magicui-theme-vt="active"]::view-transition-new(root) {
+  z-index: 9999;
+}
+

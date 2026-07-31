@@ -4,6 +4,7 @@ const {
 
 /** @type {import('tailwindcss').Config} */
 module.exports = {
+  darkMode: ["class"],
   content: [
     "./pages/**/*.{ts,tsx}",
     "./components/**/*.{ts,tsx}",
@@ -17,6 +18,7 @@ module.exports = {
       mont: ["Montserrat", "sans-serif"],
       rubik: ["Major Mono Display", "monospace"],
       tiny: ["Tiny5", "sans-serif"],
+      cursive: ["'Great Vibes'", "'Dancing Script'", "cursive"],
     },
     extend: {
       animation: {

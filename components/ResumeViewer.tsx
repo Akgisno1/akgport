@@ -1,5 +1,6 @@
 import React from "react";
 import { useToast } from "@/components/ui/use-toast";
+import Link from "next/link";
 const ResumeViewer = () => {
   const resumeUrl = "/AkgResume.pdf"; // Replace with your actual resume URL
   const { toast } = useToast();
@@ -19,14 +20,14 @@ const ResumeViewer = () => {
         Checkout My Resume
       </h1>
       <div className=" flex flex-row max-sm:flex-col gap-2">
-        <a
+        <Link
           href={resumeUrl}
           target="_blank"
           rel="noopener noreferrer"
           className="bg-teal-500 justify-center flex hover:bg-white hover:text-teal-500 text-white font-bold py-2 px-4 rounded"
         >
           View Resume
-        </a>
+        </Link>
         <button
           onClick={handleDownload}
           className="bg-teal-500 justify-center flex hover:bg-white hover:text-teal-500 text-white font-bold py-2 px-4 rounded"

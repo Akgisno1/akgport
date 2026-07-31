@@ -126,7 +126,7 @@ const Skills = () => {
           <div className="pageTitle max-sm:mb-28">
             <BoxReveal boxColor={"#00CCCC"} duration={0.5}>
               <p className="text-8xl font-semibold bg-clip-text max-sm:text-6xl font-oxo text-transparent bg-gradient-to-r from-white to-teal-500">
-                Skills<span className="text-[#00CCCC]">.</span>
+                Skills<span className="text-emerald-500">.</span>
               </p>
             </BoxReveal>
           </div>
