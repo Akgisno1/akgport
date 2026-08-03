@@ -50,7 +50,7 @@ export const AboutHero = () => {
   // GSAP Entrance Animations
   useGSAP(
     () => {
-      const tl = gsap.timeline({ delay: 1 });
+      const tl = gsap.timeline({ delay: 0.5 });
 
       // 1. Title Slide & Fade In
       tl.fromTo(
@@ -95,21 +95,21 @@ export const AboutHero = () => {
       ref={containerRef}
       onMouseMove={handleMouseMove}
       onMouseLeave={handleMouseLeave}
-      className="relative w-screen h-screen flex flex-col justify-between p-[3vw] lg:p-[4vw] overflow-hidden select-none bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-white font-sans"
+      className="relative w-screen min-h-screen lg:h-screen flex flex-col justify-between p-[5vw] sm:p-[4vw] lg:p-[4vw] overflow-hidden select-none bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-white font-sans"
     >
       {/* Main Content Area */}
-      <div className="my-auto max-w-">
+      <div className="my-auto w-full max-w-[92vw] lg:max-w-[85vw] mx-auto py-[6vw] lg:py-0">
         {/* Main Title: ABOUT ME with 3D Tilt Badges */}
         <h1
           ref={titleRef}
-          className="text-[5.5vw] font-black font-mont uppercase tracking-tight leading-[1.08] mb-[2vw]"
+          className="text-[8vw] sm:text-[6.5vw] lg:text-[5.5vw] font-black font-mont uppercase tracking-tight leading-[1.12] mb-[4vw] lg:mb-[2vw]"
         >
           ABOUT ME <br />
-          <span className="text-slate-400 dark:text-zinc-600 font-light text-[4vw]">
+          <span className="text-slate-400 dark:text-zinc-600 font-light text-[6vw] sm:text-[4.8vw] lg:text-[4vw]">
             BEHIND THE
           </span>{" "}
           {/* Interactive 3D Badge 1 */}
-          <span className="inline-block bg-slate-900 dark:bg-white px-[1.6vw] py-[0.3vw] rounded-[1.2vw] shadow-2xl relative overflow-hidden align-middle mx-[0.2vw]">
+          <span className="inline-block bg-slate-900 dark:bg-white px-[3vw] sm:px-[2vw] lg:px-[1.6vw] py-[0.8vw] sm:py-[0.5vw] lg:py-[0.3vw] rounded-[2.5vw] sm:rounded-[1.8vw] lg:rounded-[1.2vw] shadow-2xl relative overflow-hidden align-middle mx-[0.5vw] lg:mx-[0.2vw]">
             <span
               ref={badgeText1Ref}
               className="inline-block text-emerald-400 dark:text-emerald-600 font-extrabold transition-transform duration-100 ease-out"
@@ -120,7 +120,7 @@ export const AboutHero = () => {
           </span>{" "}
           &{" "}
           {/* Interactive 3D Badge 2 */}
-          <span className="inline-block bg-emerald-500 px-[1.6vw] py-[0.3vw] rounded-[1.2vw] shadow-2xl relative overflow-hidden align-middle mx-[0.2vw]">
+          <span className="inline-block bg-emerald-500 px-[3vw] sm:px-[2vw] lg:px-[1.6vw] py-[0.8vw] sm:py-[0.5vw] lg:py-[0.3vw] rounded-[2.5vw] sm:rounded-[1.8vw] lg:rounded-[1.2vw] shadow-2xl relative overflow-hidden align-middle mx-[0.5vw] lg:mx-[0.2vw]">
             <span
               ref={badgeText2Ref}
               className="inline-block text-slate-950 font-extrabold transition-transform duration-100 ease-out"
@@ -131,15 +131,15 @@ export const AboutHero = () => {
           </span>
         </h1>
 
-        {/* Bio Summary (Container Box Removed) */}
-        <div ref={summaryRef} className=" space-y-[1.8vw] mt-[1vw]">
-          <p className="text-[1.45vw] leading-[1.65] text-slate-700 dark:text-slate-300 font-light">
+        {/* Bio Summary */}
+        <div ref={summaryRef} className="space-y-[3vw] lg:space-y-[1.8vw] mt-[2vw] lg:mt-[1vw]">
+          <p className="text-[3.8vw] sm:text-[2.2vw] lg:text-[1.45vw] leading-[1.65] text-slate-700 dark:text-slate-300 font-light">
             Full-stack software engineer with 7 months of internship experience building and shipping production applications using React.js, Node.js, and Next.js. Hands-on experience integrating LLMs (OpenAI API) and building AI-powered features into web apps—ranging from prompt engineering to RAG pipelines. Writes test-driven code with structured Git workflows and strong algorithmic problem-solving (400+ DSA problems solved).
           </p>
 
           {/* Core Pillars / Focus Area Pills */}
-          <div className=" flex flex-wrap gap-[0.8vw] items-center">
-            <span className="text-[0.85vw] font-mono text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider mr-[0.5vw]">
+          <div className="flex flex-wrap gap-[1.5vw] lg:gap-[0.8vw] items-center pt-[1vw] lg:pt-0">
+            <span className="w-full sm:w-auto text-[2.8vw] sm:text-[1.5vw] lg:text-[0.85vw] font-mono text-slate-500 dark:text-slate-400 font-bold uppercase tracking-wider mb-[1vw] sm:mb-0 mr-[0.5vw]">
               CORE FOCUS:
             </span>
             {[
@@ -151,7 +151,7 @@ export const AboutHero = () => {
             ].map((item) => (
               <span
                 key={item}
-                className="highlight-pill px-[1vw] py-[0.4vw] bg-slate-200/60 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-800 dark:text-slate-300 rounded-[0.6vw] text-[0.85vw] font-mono hover:border-emerald-500 hover:text-emerald-500 transition-colors duration-200 cursor-default"
+                className="highlight-pill px-[2.8vw] sm:px-[1.8vw] lg:px-[1vw] py-[1.2vw] sm:py-[0.8vw] lg:py-[0.4vw] bg-slate-200/60 dark:bg-zinc-900 border border-slate-300 dark:border-zinc-800 text-slate-800 dark:text-slate-300 rounded-[1.5vw] sm:rounded-[1vw] lg:rounded-[0.6vw] text-[2.8vw] sm:text-[1.5vw] lg:text-[0.85vw] font-mono hover:border-emerald-500 hover:text-emerald-500 transition-colors duration-200 cursor-default"
               >
                 {item}
               </span>
@@ -163,15 +163,15 @@ export const AboutHero = () => {
       {/* Bottom Control Bar */}
       <div
         ref={bottomBarRef}
-        className="flex justify-between items-center text-[0.9vw] font-mono text-slate-500 border-t border-slate-200 dark:border-white/10 pt-[1.5vw]"
+        className="flex flex-col sm:flex-row gap-[2vw] sm:gap-0 justify-between items-center text-[2.8vw] sm:text-[1.5vw] lg:text-[0.9vw] font-mono text-slate-500 border-t border-slate-200 dark:border-white/10 pt-[3vw] lg:pt-[1.5vw]"
       >
-        <span className="text-slate-400 dark:text-slate-500 uppercase tracking-wider">
+        <span className="text-slate-400 dark:text-slate-500 uppercase tracking-wider text-center sm:text-left">
           EXPLORE MY JOURNEY & CAPABILITIES BELOW
         </span>
 
-        <div className="flex items-center gap-[0.8vw]">
+        <div className="flex items-center gap-[1.5vw] lg:gap-[0.8vw]">
           <span className="tracking-widest uppercase">SCROLL</span>
-          <span className="px-[0.8vw] py-[0.3vw] rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-bold animate-bounce">
+          <span className="px-[2vw] lg:px-[0.8vw] py-[0.8vw] lg:py-[0.3vw] rounded-full bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 font-bold animate-bounce">
             [ ↓ ]
           </span>
         </div>

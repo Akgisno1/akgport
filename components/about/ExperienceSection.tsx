@@ -15,7 +15,6 @@ export const ExperienceSection = () => {
   useGSAP(
     () => {
       // 1. Initial State Setup
-      // Card 1: Fully active, visible, and interactive
       gsap.set(".exp-card-1", {
         autoAlpha: 1,
         scale: 1,
@@ -23,7 +22,6 @@ export const ExperienceSection = () => {
         pointerEvents: "auto",
       });
 
-      // Card 2: Invisible (visibility: hidden + opacity: 0), completely ignored by browser hit-testing
       gsap.set(".exp-card-2", {
         autoAlpha: 0,
         yPercent: 110,
@@ -41,7 +39,7 @@ export const ExperienceSection = () => {
         },
       });
 
-      // 2. SMOOTH STAIRS EXIT: Explicit 0.4s duration + 0.15s stagger
+      // 2. STAIRS EXIT
       expTl.to(
         ".stair-col",
         {
@@ -53,11 +51,9 @@ export const ExperienceSection = () => {
         0
       );
 
-      // Hide stair container ONLY AFTER all 5 stairs finish moving off-screen (">" position)
       expTl.set(".stair-container", { display: "none" }, ">");
 
-      // 3. CARD TRANSITION:
-      // Card 1 stays in place, blurs, scales down, dims, and disables pointer events
+      // 3. CARD TRANSITION
       expTl.to(
         ".exp-card-1",
         {
@@ -70,7 +66,6 @@ export const ExperienceSection = () => {
         0.70
       );
 
-      // Card 2 becomes visible (autoAlpha: 1), slides up over Card 1, and enables pointer events
       expTl.to(
         ".exp-card-2",
         {
@@ -101,35 +96,35 @@ export const ExperienceSection = () => {
       </div>
 
       {/* Section Header */}
-      <div className="w-full max-w-[82vw] flex justify-between items-end pb-[1.5vw] z-10 select-none">
+      <div className="w-full max-w-[92vw] lg:max-w-[82vw] flex flex-col sm:flex-row justify-between items-start sm:items-end pb-[2vw] lg:pb-[1.5vw] z-10 select-none gap-[1vw] sm:gap-0">
         <div>
-          <span className="text-[0.9vw] font-oxo text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-widest block">
+          <span className="text-[2.8vw] sm:text-[1.5vw] lg:text-[0.9vw] font-oxo text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-widest block">
             EXPERIENCE
           </span>
-          <h2 className="text-[3.2vw] font-black font-mont uppercase tracking-tight text-slate-900 dark:text-white mt-[0.2vw]">
+          <h2 className="text-[6.5vw] sm:text-[4vw] lg:text-[3.2vw] font-black font-mont uppercase tracking-tight text-slate-900 dark:text-white mt-[0.2vw]">
             WORK EXPERIENCE
           </h2>
         </div>
-        <span className="text-[0.85vw] font-oxo text-slate-400 uppercase tracking-wider">
+        <span className="text-[2.8vw] sm:text-[1.5vw] lg:text-[0.85vw] font-oxo text-slate-400 uppercase tracking-wider">
           7 MONTHS INTERNSHIP EXPERIENCE
         </span>
       </div>
 
       {/* Cards Container */}
-      <div className="relative w-full max-w-[82vw] h-[64vh] my-auto z-20">
+      <div className="relative w-full max-w-[92vw] lg:max-w-[82vw] h-[72vh] lg:h-[64vh] my-auto z-20">
         {/* CARD 1: SIDE HUSSLR */}
-        <div className="exp-card-1 absolute inset-0 z-10 p-[2.8vw] bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-[1.8vw] shadow-2xl flex flex-col justify-between transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)] pointer-events-auto">
-          <div className="grid grid-cols-12 gap-[2.5vw] items-start">
+        <div className="exp-card-1 absolute inset-0 z-10 p-[5vw] sm:p-[3.5vw] lg:p-[2.8vw] bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-[4vw] sm:rounded-[2.5vw] lg:rounded-[1.8vw] shadow-2xl flex flex-col justify-between overflow-y-auto lg:overflow-hidden pointer-events-auto">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-[4vw] lg:gap-[2.5vw] items-start">
             {/* Left Column (Meta, Dates, Tech Stack) */}
-            <div className="col-span-5 space-y-[1.2vw] pr-[1vw]">
+            <div className="lg:col-span-5 space-y-[2.5vw] lg:space-y-[1.2vw] lg:pr-[1vw]">
               <div>
-                <span className="px-[0.8vw] py-[0.3vw] bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 rounded-full text-[0.75vw] font-oxo font-bold uppercase">
+                <span className="px-[2.5vw] lg:px-[0.8vw] py-[0.8vw] lg:py-[0.3vw] bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 rounded-full text-[2.5vw] sm:text-[1.4vw] lg:text-[0.75vw] font-oxo font-bold uppercase">
                   FEB 2025 — JUN 2025
                 </span>
-                <h3 className="text-[2.2vw] font-black font-mont uppercase tracking-tight text-slate-900 dark:text-white mt-[0.8vw] leading-tight">
+                <h3 className="text-[5vw] sm:text-[3vw] lg:text-[2.2vw] font-black font-mont uppercase tracking-tight text-slate-900 dark:text-white mt-[1.5vw] lg:mt-[0.8vw] leading-tight">
                   Full Stack Developer Intern
                 </h3>
-                <p className="text-[1.1vw] font-bold text-emerald-600 dark:text-emerald-400 font-oxo mt-[0.3vw]">
+                <p className="text-[3.2vw] sm:text-[2vw] lg:text-[1.1vw] font-bold text-emerald-600 dark:text-emerald-400 font-oxo mt-[0.5vw] lg:mt-[0.3vw]">
                   @ SideHusslr (Remote)
                 </p>
               </div>
@@ -139,18 +134,18 @@ export const ExperienceSection = () => {
                   href="https://www.linkedin.com/company/sidehusslr/home/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-[1.2vw] py-[0.5vw] bg-emerald-500 text-slate-950 font-black rounded-full text-[0.8vw] font-oxo hover:bg-emerald-400 hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-200 cursor-pointer relative z-30"
+                  className="inline-block px-[3.5vw] lg:px-[1.2vw] py-[1.5vw] lg:py-[0.5vw] bg-emerald-500 text-slate-950 font-black rounded-full text-[2.8vw] sm:text-[1.6vw] lg:text-[0.8vw] font-oxo hover:bg-emerald-400 hover:scale-105 transition-all duration-200 cursor-pointer relative z-30"
                 >
                   VIEW ON LINKEDIN ↗
                 </a>
               </div>
 
               {/* Tech Stack Pills */}
-              <div className="pt-[1vw] space-y-[0.5vw]">
-                <span className="text-[0.75vw] font-oxo text-slate-400 uppercase font-bold tracking-wider block">
+              <div className="pt-[1vw] space-y-[1vw] lg:space-y-[0.5vw]">
+                <span className="text-[2.5vw] sm:text-[1.4vw] lg:text-[0.75vw] font-oxo text-slate-400 uppercase font-bold tracking-wider block">
                   TECH USED:
                 </span>
-                <div className="flex flex-wrap gap-[0.4vw]">
+                <div className="flex flex-wrap gap-[1vw] lg:gap-[0.4vw]">
                   {[
                     "Node.js",
                     "React.js",
@@ -163,7 +158,7 @@ export const ExperienceSection = () => {
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="px-[0.8vw] py-[0.3vw] bg-slate-200/60 dark:bg-zinc-950 text-slate-800 dark:text-slate-300 rounded-[0.5vw] text-[0.75vw] font-tiny hover:bg-emerald-500 hover:text-slate-950 hover:scale-105 hover:shadow-[0_0_12px_#10b981] transition-all duration-200 cursor-default"
+                      className="px-[2.5vw] lg:px-[0.8vw] py-[1vw] lg:py-[0.3vw] bg-slate-200/60 dark:bg-zinc-950 text-slate-800 dark:text-slate-300 rounded-[1.5vw] lg:rounded-[0.5vw] text-[2.5vw] sm:text-[1.4vw] lg:text-[0.75vw] font-tiny"
                     >
                       {tech}
                     </span>
@@ -173,24 +168,24 @@ export const ExperienceSection = () => {
             </div>
 
             {/* Right Column (Achievements & Deliverables) */}
-            <div className="col-span-7 border-l border-slate-200/60 dark:border-white/10 pl-[2.5vw] space-y-[1vw]">
-              <span className="text-[0.8vw] font-oxo text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider block mb-[0.5vw]">
+            <div className="lg:col-span-7 border-t lg:border-t-0 lg:border-l border-slate-200/60 dark:border-white/10 pt-[3vw] lg:pt-0 lg:pl-[2.5vw] space-y-[2vw] lg:space-y-[1vw]">
+              <span className="text-[2.8vw] sm:text-[1.6vw] lg:text-[0.8vw] font-oxo text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider block mb-[0.5vw]">
                 KEY HIGHLIGHTS & IMPACT
               </span>
-              <ul className="space-y-[0.8vw] text-[1.05vw] text-slate-700 dark:text-slate-300 font-rubik font-light">
-                <li className="flex items-start gap-[0.7vw]">
+              <ul className="space-y-[2vw] lg:space-y-[0.8vw] text-[3.2vw] sm:text-[1.8vw] lg:text-[1.05vw] text-slate-700 dark:text-slate-300 font-rubik font-light">
+                <li className="flex items-start gap-[1.5vw] lg:gap-[0.7vw]">
                   <span className="text-emerald-500 font-bold mt-[0.1vw]">↗</span>
                   Built full-stack applications using Node.js and React.js (8+ features, 50+ components, 30+ server actions) with end-to-end ownership.
                 </li>
-                <li className="flex items-start gap-[0.7vw]">
+                <li className="flex items-start gap-[1.5vw] lg:gap-[0.7vw]">
                   <span className="text-emerald-500 font-bold mt-[0.1vw]">↗</span>
                   Integrated REST APIs across 30+ server actions using async-await; optimized HTTP layer reducing API latency by 60% (3.5s → 1.4s).
                 </li>
-                <li className="flex items-start gap-[0.7vw]">
+                <li className="flex items-start gap-[1.5vw] lg:gap-[0.7vw]">
                   <span className="text-emerald-500 font-bold mt-[0.1vw]">↗</span>
                   Wrote test-driven code with 85% unit and integration coverage, reducing production failures by 40%.
                 </li>
-                <li className="flex items-start gap-[0.7vw]">
+                <li className="flex items-start gap-[1.5vw] lg:gap-[0.7vw] max-sm:hidden">
                   <span className="text-emerald-500 font-bold mt-[0.1vw]">↗</span>
                   Iterated on prompts using Cursor and Copilot to improve AI output quality, reducing debugging cycles by 25% across 12+ scrum demos.
                 </li>
@@ -200,18 +195,18 @@ export const ExperienceSection = () => {
         </div>
 
         {/* CARD 2: AADI FOUNDATION */}
-        <div className="exp-card-2 absolute inset-0 z-20 invisible pointer-events-none p-[2.8vw] bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-[1.8vw] shadow-2xl flex flex-col justify-between transition-shadow duration-300 hover:shadow-[0_20px_50px_rgba(16,185,129,0.15)]">
-          <div className="grid grid-cols-12 gap-[2.5vw] items-start">
+        <div className="exp-card-2 absolute inset-0 z-20 invisible pointer-events-none p-[5vw] sm:p-[3.5vw] lg:p-[2.8vw] bg-white/80 dark:bg-zinc-900/80 backdrop-blur-md rounded-[4vw] sm:rounded-[2.5vw] lg:rounded-[1.8vw] shadow-2xl flex flex-col justify-between overflow-y-auto lg:overflow-hidden">
+          <div className="grid grid-cols-1 lg:grid-cols-12 gap-[4vw] lg:gap-[2.5vw] items-start">
             {/* Left Column (Meta, Dates, Tech Stack) */}
-            <div className="col-span-5 space-y-[1.2vw] pr-[1vw]">
+            <div className="lg:col-span-5 space-y-[2.5vw] lg:space-y-[1.2vw] lg:pr-[1vw]">
               <div>
-                <span className="px-[0.8vw] py-[0.3vw] bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 rounded-full text-[0.75vw] font-oxo font-bold uppercase">
+                <span className="px-[2.5vw] lg:px-[0.8vw] py-[0.8vw] lg:py-[0.3vw] bg-emerald-500/10 border border-emerald-500/30 text-emerald-600 dark:text-emerald-400 rounded-full text-[2.5vw] sm:text-[1.4vw] lg:text-[0.75vw] font-oxo font-bold uppercase">
                   OCT 2024 — NOV 2024
                 </span>
-                <h3 className="text-[2.2vw] font-black font-mont uppercase tracking-tight text-slate-900 dark:text-white mt-[0.8vw] leading-tight">
+                <h3 className="text-[5vw] sm:text-[3vw] lg:text-[2.2vw] font-black font-mont uppercase tracking-tight text-slate-900 dark:text-white mt-[1.5vw] lg:mt-[0.8vw] leading-tight">
                   Web Development Intern
                 </h3>
-                <p className="text-[1.1vw] font-bold text-emerald-600 dark:text-emerald-400 font-oxo mt-[0.3vw]">
+                <p className="text-[3.2vw] sm:text-[2vw] lg:text-[1.1vw] font-bold text-emerald-600 dark:text-emerald-400 font-oxo mt-[0.5vw] lg:mt-[0.3vw]">
                   @ Aadi Foundation (Remote)
                 </p>
               </div>
@@ -221,18 +216,18 @@ export const ExperienceSection = () => {
                   href="https://www.linkedin.com/company/aadi-foundation-official/home/"
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="inline-block px-[1.2vw] py-[0.5vw] bg-emerald-500 text-slate-950 font-black rounded-full text-[0.8vw] font-oxo hover:bg-emerald-400 hover:scale-105 hover:shadow-[0_0_20px_rgba(16,185,129,0.4)] transition-all duration-200 cursor-pointer relative z-30"
+                  className="inline-block px-[3.5vw] lg:px-[1.2vw] py-[1.5vw] lg:py-[0.5vw] bg-emerald-500 text-slate-950 font-black rounded-full text-[2.8vw] sm:text-[1.6vw] lg:text-[0.8vw] font-oxo hover:bg-emerald-400 hover:scale-105 transition-all duration-200 cursor-pointer relative z-30"
                 >
                   VIEW ON LINKEDIN ↗
                 </a>
               </div>
 
               {/* Tech Stack Pills */}
-              <div className="pt-[1vw] space-y-[0.5vw]">
-                <span className="text-[0.75vw] font-oxo text-slate-400 uppercase font-bold tracking-wider block">
+              <div className="pt-[1vw] space-y-[1vw] lg:space-y-[0.5vw]">
+                <span className="text-[2.5vw] sm:text-[1.4vw] lg:text-[0.75vw] font-oxo text-slate-400 uppercase font-bold tracking-wider block">
                   TECH USED:
                 </span>
-                <div className="flex flex-wrap gap-[0.4vw]">
+                <div className="flex flex-wrap gap-[1vw] lg:gap-[0.4vw]">
                   {[
                     "React.js",
                     "JavaScript",
@@ -244,7 +239,7 @@ export const ExperienceSection = () => {
                   ].map((tech) => (
                     <span
                       key={tech}
-                      className="px-[0.8vw] py-[0.3vw] bg-slate-200/60 dark:bg-zinc-950 text-slate-800 dark:text-slate-300 rounded-[0.5vw] text-[0.75vw] font-tiny hover:bg-emerald-500 hover:text-slate-950 hover:scale-105 hover:shadow-[0_0_12px_#10b981] transition-all duration-200 cursor-default"
+                      className="px-[2.5vw] lg:px-[0.8vw] py-[1vw] lg:py-[0.3vw] bg-slate-200/60 dark:bg-zinc-950 text-slate-800 dark:text-slate-300 rounded-[1.5vw] lg:rounded-[0.5vw] text-[2.5vw] sm:text-[1.4vw] lg:text-[0.75vw] font-tiny"
                     >
                       {tech}
                     </span>
@@ -254,20 +249,20 @@ export const ExperienceSection = () => {
             </div>
 
             {/* Right Column (Achievements & Deliverables) */}
-            <div className="col-span-7 border-l border-slate-200/60 dark:border-white/10 pl-[2.5vw] space-y-[1vw]">
-              <span className="text-[0.8vw] font-oxo text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider block mb-[0.5vw]">
+            <div className="lg:col-span-7 border-t lg:border-t-0 lg:border-l border-slate-200/60 dark:border-white/10 pt-[3vw] lg:pt-0 lg:pl-[2.5vw] space-y-[2vw] lg:space-y-[1vw]">
+              <span className="text-[2.8vw] sm:text-[1.6vw] lg:text-[0.8vw] font-oxo text-emerald-600 dark:text-emerald-400 font-bold uppercase tracking-wider block mb-[0.5vw]">
                 KEY HIGHLIGHTS & IMPACT
               </span>
-              <ul className="space-y-[1vw] text-[1.1vw] text-slate-700 dark:text-slate-300 font-rubik font-light">
-                <li className="flex items-start gap-[0.7vw]">
+              <ul className="space-y-[2vw] lg:space-y-[1vw] text-[3.2vw] sm:text-[1.8vw] lg:text-[1.1vw] text-slate-700 dark:text-slate-300 font-rubik font-light">
+                <li className="flex items-start gap-[1.5vw] lg:gap-[0.7vw]">
                   <span className="text-emerald-500 font-bold mt-[0.1vw]">↗</span>
                   Built 10+ responsive web components using JavaScript, HTML5, CSS3, and DOM manipulation.
                 </li>
-                <li className="flex items-start gap-[0.7vw]">
+                <li className="flex items-start gap-[1.5vw] lg:gap-[0.7vw]">
                   <span className="text-emerald-500 font-bold mt-[0.1vw]">↗</span>
                   Automated CI/CD pipelines via GitHub Actions with zero production defects shipped through continuous integration discipline.
                 </li>
-                <li className="flex items-start gap-[0.7vw]">
+                <li className="flex items-start gap-[1.5vw] lg:gap-[0.7vw]">
                   <span className="text-emerald-500 font-bold mt-[0.1vw]">↗</span>
                   Practiced Git workflows (branching, PRs, code reviews) alongside senior engineers, maintaining 100% sprint delivery alignment.
                 </li>
@@ -278,7 +273,7 @@ export const ExperienceSection = () => {
       </div>
 
       {/* Footer Meta */}
-      <div className="w-full max-w-[82vw] flex justify-between items-center text-[0.85vw] font-tiny text-slate-500 z-10 pt-[1vw] select-none">
+      <div className="w-full max-w-[92vw] lg:max-w-[82vw] flex flex-col sm:flex-row justify-between items-center text-[2.5vw] sm:text-[1.4vw] lg:text-[0.85vw] font-tiny text-slate-500 z-10 pt-[1vw] select-none text-center sm:text-left gap-[0.5vw] sm:gap-0">
         <span>PROVEN AGILE & TDD WORKFLOWS</span>
         <span>PRODUCTION-READY FULL STACK DEVELOPMENT</span>
       </div>

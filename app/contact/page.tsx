@@ -9,7 +9,8 @@ import {
   Mail,
   FileText,
 } from "lucide-react";
-import { createContact, ContactFormData } from "@/lib/contact.action"; // Adjust path as needed
+import { createContact, ContactFormData } from "@/lib/contact.action";
+import { ACCORDION_DATA } from "@/data/contact";
 
 // Clean inline Brand SVGs
 const LinkedinIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
@@ -37,39 +38,6 @@ const GithubIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
     />
   </svg>
 );
-
-interface AccordionItem {
-  id: string;
-  question: string;
-  answer: string;
-}
-
-const ACCORDION_DATA: AccordionItem[] = [
-  {
-    id: "roles",
-    question: "What roles are you actively looking for?",
-    answer:
-      "I am actively seeking full-time Software Engineer, Backend Developer, and Full-Stack Developer roles. I specialize in building microservices, high-throughput APIs, and modern frontend interfaces.",
-  },
-  {
-    id: "tech-stack",
-    question: "What is your primary tech stack?",
-    answer:
-      "My backend core includes Java, Spring Boot, Node.js, Express, PostgreSQL, Redis, and Docker. On the frontend, I build with Next.js, React, TypeScript, Tailwind CSS, and GSAP.",
-  },
-  {
-    id: "location",
-    question: "What is your location preference and availability?",
-    answer:
-      "I am open to Remote opportunities as well as Onsite/Hybrid roles. I am available for immediate onboarding or standard notice periods.",
-  },
-  {
-    id: "resume",
-    question: "Where can I review your resume or technical background?",
-    answer:
-      "You can explore my interactive case studies on this portfolio, view my open-source projects on GitHub, or reach out directly to request my latest resume.",
-  },
-];
 
 const DIRECT_LINKS = [
   {
@@ -138,7 +106,9 @@ const Contact = () => {
       if (response.success) {
         setIsSubmitted(true);
       } else {
-        setErrorMsg(response.error || "Failed to submit message. Please try again.");
+        setErrorMsg(
+          response.error || "Failed to submit message. Please try again."
+        );
       }
     } catch (err) {
       setErrorMsg("An unexpected error occurred. Please try again later.");
@@ -147,30 +117,43 @@ const Contact = () => {
     }
   };
 
+  // Standardized Ergonomic Field Styling for Mobile & Desktop
+  const fieldBaseClass = `
+    inline-flex items-center justify-center
+    h-10 sm:h-11 lg:h-12
+    px-3 sm:px-4 rounded-lg sm:rounded-xl
+    bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900
+    focus:bg-emerald-600 focus:text-white dark:focus:bg-emerald-500 dark:focus:text-zinc-950
+    hover:bg-slate-800 dark:hover:bg-zinc-200
+    border border-transparent focus:border-emerald-400 focus:outline-none
+    font-medium text-sm sm:text-lg lg:text-xl transition-all duration-200
+    placeholder:text-zinc-400 dark:placeholder:text-zinc-500 cursor-pointer
+  `;
+
   return (
-    <section className="min-h-screen w-full bg-slate-50 dark:bg-zinc-950 text-slate-900 dark:text-white px-[4vw] lg:px-[6vw] py-[8vw] lg:py-[5vw] transition-colors duration-300 selection:bg-emerald-500 selection:text-white dark:selection:text-black">
-      <div className="max-w-[82vw] mx-auto space-y-[6vw] lg:space-y-[4vw]">
+    <section className="min-h-screen w-full bg-slate-50 dark:bg-zinc-950 text-slate-900 max-sm:pt-[15vw] dark:text-white px-4 sm:px-8 lg:px-[6vw] py-8 sm:py-12 lg:py-[5vw] transition-colors duration-300 selection:bg-emerald-500 selection:text-white dark:selection:text-black">
+      <div className="max-w-7xl mx-auto space-y-8 sm:space-y-12 lg:space-y-[4vw]">
         
         {/* 1. Header */}
-        <div className="flex items-end justify-between border-b border-slate-200/60 dark:border-zinc-800/60 pb-[2vw] lg:pb-[1.5vw]">
-          <h1 className="font-mono text-[10vw] lg:text-[7.5vw] font-black leading-none uppercase tracking-tighter text-slate-900 dark:text-zinc-100 select-none">
+        <div className="flex items-end justify-between border-b border-slate-200/60 dark:border-zinc-800/60 pb-4 lg:pb-[1.5vw]">
+          <h1 className="font-mono text-4xl sm:text-6xl lg:text-[7.5vw] font-black leading-none uppercase tracking-tighter text-slate-900 dark:text-zinc-100 select-none">
             CONTACT<span className="text-emerald-600 dark:text-emerald-500">.</span>
           </h1>
         </div>
 
-        {/* 2. Form Section */}
-        <div className="w-full bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md rounded-[2rem] p-[6vw] lg:p-[3.5vw] shadow-2xl">
-          <h2 className="font-mono text-xs lg:text-sm uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-[2.5vw]">
+        {/* 2. Mobile-Optimized Conversational Form Section */}
+        <div className="w-full bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 lg:p-[3.5vw] shadow-2xl">
+          <h2 className="font-mono text-xs sm:text-sm uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-4 sm:mb-6">
             Get In Touch
           </h2>
 
           {isSubmitted ? (
-            <div className="py-[3vw] flex flex-col items-start gap-4 animate-fadeIn">
+            <div className="py-6 flex flex-col items-start gap-4 animate-fadeIn">
               <CheckCircle2 className="w-12 h-12 text-emerald-500 animate-bounce" />
-              <h3 className="text-2xl lg:text-3xl font-bold">
+              <h3 className="text-xl sm:text-2xl lg:text-3xl font-bold">
                 Thank you for getting in touch!
               </h3>
-              <p className="text-slate-600 dark:text-zinc-400 max-w-lg leading-relaxed">
+              <p className="text-sm sm:text-base text-slate-600 dark:text-zinc-400 max-w-lg leading-relaxed">
                 I’ve received your message regarding the opportunity at{" "}
                 <span className="text-emerald-500 font-semibold">
                   {formData.company || "your team"}
@@ -189,15 +172,16 @@ const Contact = () => {
                     message: "",
                   });
                 }}
-                className="mt-2 px-6 py-2.5 rounded-full font-mono text-xs uppercase tracking-wider bg-slate-900 dark:bg-white text-white dark:text-zinc-950 font-bold hover:opacity-90 transition-opacity"
+                className="mt-2 w-full sm:w-auto px-6 py-3 rounded-full font-mono text-xs uppercase tracking-wider bg-slate-900 dark:bg-white text-white dark:text-zinc-950 font-bold hover:opacity-90 transition-opacity"
               >
                 Send Another Note
               </button>
             </div>
           ) : (
-            <form onSubmit={handleSubmit} className="space-y-8">
-              <p className="text-xl md:text-2xl lg:text-3xl leading-relaxed lg:leading-loose font-light text-slate-800 dark:text-zinc-200">
-                Hi Anshul! My name is{" "}
+            <form onSubmit={handleSubmit} className="space-y-6 sm:space-y-8">
+              {/* Flex-wrapped inline elements stop awkward wrapping/overflow on small screens */}
+              <div className="flex flex-wrap items-center gap-x-2 gap-y-3 sm:gap-x-3 sm:gap-y-4 text-base sm:text-2xl lg:text-3xl font-light text-slate-800 dark:text-zinc-200 leading-snug sm:leading-relaxed">
+                <span className="whitespace-nowrap">Hi Anshul! My name is</span>
                 <input
                   type="text"
                   name="name"
@@ -205,29 +189,29 @@ const Contact = () => {
                   placeholder="your name"
                   value={formData.name}
                   onChange={handleInputChange}
-                  className="inline-block border-b-2 border-slate-300 dark:border-zinc-700 bg-transparent text-emerald-600 dark:text-emerald-400 font-medium placeholder:text-slate-400 dark:placeholder:text-zinc-600 focus:border-emerald-500 focus:outline-none px-1 transition-colors min-w-[140px] max-w-full"
+                  className={`${fieldBaseClass} flex-1 sm:flex-none min-w-[130px]`}
                 />
-                , and I am a{" "}
+                <span className="whitespace-nowrap">, and I am a</span>
                 <select
                   name="senderTitle"
                   value={formData.senderTitle}
                   onChange={handleInputChange}
-                  className="inline-block border-b-2 border-slate-300 dark:border-zinc-700 bg-transparent text-emerald-600 dark:text-emerald-400 font-medium focus:border-emerald-500 focus:outline-none px-1 transition-colors cursor-pointer"
+                  className={`${fieldBaseClass} flex-1 sm:flex-none`}
                 >
-                  <option value="Recruiter" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Recruiter" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Recruiter
                   </option>
-                  <option value="Hiring Manager" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Hiring Manager" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Hiring Manager
                   </option>
-                  <option value="Engineering Lead" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Engineering Lead" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Engineering Lead
                   </option>
-                  <option value="Founder / CEO" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Founder / CEO" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Founder / CEO
                   </option>
                 </select>
-                {" "}at{" "}
+                <span className="whitespace-nowrap">at</span>
                 <input
                   type="text"
                   name="company"
@@ -235,29 +219,29 @@ const Contact = () => {
                   placeholder="company name"
                   value={formData.company}
                   onChange={handleInputChange}
-                  className="inline-block border-b-2 border-slate-300 dark:border-zinc-700 bg-transparent text-emerald-600 dark:text-emerald-400 font-medium placeholder:text-slate-400 dark:placeholder:text-zinc-600 focus:border-emerald-500 focus:outline-none px-1 transition-colors min-w-[150px] max-w-full"
+                  className={`${fieldBaseClass} flex-1 sm:flex-none min-w-[140px]`}
                 />
-                . I am reaching out regarding a{" "}
+                <span>. I am reaching out regarding a</span>
                 <select
                   name="roleType"
                   value={formData.roleType}
                   onChange={handleInputChange}
-                  className="inline-block border-b-2 border-slate-300 dark:border-zinc-700 bg-transparent text-emerald-600 dark:text-emerald-400 font-medium focus:border-emerald-500 focus:outline-none px-1 transition-colors cursor-pointer"
+                  className={`${fieldBaseClass} flex-1 sm:flex-none`}
                 >
-                  <option value="Full-Time Role" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Full-Time Role" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Full-Time Role
                   </option>
-                  <option value="Backend Developer Position" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Backend Developer Position" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Backend Developer Position
                   </option>
-                  <option value="Software Engineering Role" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Software Engineering Role" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Software Engineering Role
                   </option>
-                  <option value="Referral / Interview" className="bg-white dark:bg-zinc-900 text-slate-900 dark:text-white">
+                  <option value="Referral / Interview" className="bg-slate-900 text-white dark:bg-zinc-100 dark:text-zinc-900">
                     Referral / Interview
                   </option>
                 </select>
-                . You can write back to me at{" "}
+                <span>. You can write back to me at</span>
                 <input
                   type="email"
                   name="email"
@@ -265,10 +249,10 @@ const Contact = () => {
                   placeholder="your.email@company.com"
                   value={formData.email}
                   onChange={handleInputChange}
-                  className="inline-block border-b-2 border-slate-300 dark:border-zinc-700 bg-transparent text-emerald-600 dark:text-emerald-400 font-medium placeholder:text-slate-400 dark:placeholder:text-zinc-600 focus:border-emerald-500 focus:outline-none px-1 transition-colors min-w-[220px] max-w-full"
+                  className={`${fieldBaseClass} w-full sm:w-auto flex-1 sm:flex-none min-w-[200px]`}
                 />
-                .
-              </p>
+                <span>.</span>
+              </div>
 
               <div>
                 <label className="block font-mono text-xs uppercase tracking-widest text-slate-400 dark:text-zinc-500 mb-2">
@@ -280,18 +264,18 @@ const Contact = () => {
                   placeholder="Share job specs, tech stack requirements, or role details..."
                   value={formData.message}
                   onChange={handleInputChange}
-                  className="w-full rounded-2xl bg-slate-100/80 dark:bg-zinc-950/60 p-4 text-sm lg:text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-zinc-600 focus:border-emerald-500 focus:outline-none transition-colors resize-none"
+                  className="w-full rounded-xl sm:rounded-2xl bg-slate-100/80 dark:bg-zinc-950/60 p-3 sm:p-4 text-sm sm:text-base text-slate-900 dark:text-white placeholder:text-slate-400 dark:placeholder:text-zinc-600 focus:border-emerald-500 focus:outline-none transition-colors resize-none"
                 />
               </div>
 
               {errorMsg && (
-                <p className="text-red-500 text-sm font-medium">{errorMsg}</p>
+                <p className="text-red-500 text-xs sm:text-sm font-medium">{errorMsg}</p>
               )}
 
               <button
                 type="submit"
                 disabled={isSubmitting}
-                className="group relative inline-flex items-center gap-3 rounded-full bg-slate-900 dark:bg-white px-8 py-4 text-sm font-mono uppercase tracking-widest font-bold text-white dark:text-zinc-950 transition-all hover:bg-emerald-600 dark:hover:bg-emerald-400 dark:hover:text-zinc-950 disabled:opacity-50 cursor-pointer"
+                className="group relative w-full sm:w-auto inline-flex items-center justify-center gap-3 rounded-full bg-slate-900 dark:bg-white px-8 py-3.5 sm:py-4 text-xs sm:text-sm font-mono uppercase tracking-widest font-bold text-white dark:text-zinc-950 transition-all hover:bg-emerald-600 dark:hover:bg-emerald-400 dark:hover:text-zinc-950 disabled:opacity-50 cursor-pointer"
               >
                 {isSubmitting ? (
                   "Sending Note..."
@@ -307,8 +291,8 @@ const Contact = () => {
         </div>
 
         {/* 3. FAQ Section */}
-        <div className="w-full bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md rounded-[2rem] p-[6vw] lg:p-[3.5vw] shadow-2xl">
-          <h2 className="font-mono text-xs lg:text-sm uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-[1.5vw]">
+        <div className="w-full bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 lg:p-[3.5vw] shadow-2xl">
+          <h2 className="font-mono text-xs sm:text-sm uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-4 sm:mb-6">
             Hiring & Technical FAQ
           </h2>
 
@@ -316,12 +300,17 @@ const Contact = () => {
             {ACCORDION_DATA.map((item) => {
               const isOpen = openAccordion === item.id;
               return (
-                <div key={item.id} className="py-5">
+                <div
+                  key={item.id}
+                  className="py-4 sm:py-5 transition-all"
+                  onMouseEnter={() => setOpenAccordion(item.id)}
+                  onMouseLeave={() => setOpenAccordion(null)}
+                >
                   <button
                     onClick={() => toggleAccordion(item.id)}
                     className="w-full flex items-center justify-between text-left gap-4 group cursor-pointer"
                   >
-                    <span className="font-bold text-lg lg:text-xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                    <span className="font-bold text-base sm:text-lg lg:text-xl group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                       {item.question}
                     </span>
                     <ChevronDown
@@ -330,11 +319,20 @@ const Contact = () => {
                       }`}
                     />
                   </button>
-                  {isOpen && (
-                    <p className="mt-3 text-sm lg:text-base leading-relaxed text-slate-600 dark:text-zinc-400 animate-fadeIn">
-                      {item.answer}
-                    </p>
-                  )}
+
+                  <div
+                    className={`grid transition-all duration-300 ease-in-out ${
+                      isOpen
+                        ? "grid-rows-[1fr] opacity-100 mt-3"
+                        : "grid-rows-[0fr] opacity-0 mt-0"
+                    }`}
+                  >
+                    <div className="overflow-hidden">
+                      <p className="text-sm sm:text-base leading-relaxed text-slate-600 dark:text-zinc-400">
+                        {item.answer}
+                      </p>
+                    </div>
+                  </div>
                 </div>
               );
             })}
@@ -342,12 +340,12 @@ const Contact = () => {
         </div>
 
         {/* 4. Direct Links Section */}
-        <div className="w-full bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md rounded-[2rem] p-[6vw] lg:p-[3.5vw] shadow-2xl">
-          <h2 className="font-mono text-xs lg:text-sm uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-[2vw]">
+        <div className="w-full bg-white/70 dark:bg-zinc-900/60 backdrop-blur-md rounded-2xl sm:rounded-[2rem] p-5 sm:p-8 lg:p-[3.5vw] shadow-2xl">
+          <h2 className="font-mono text-xs sm:text-sm uppercase tracking-widest text-emerald-600 dark:text-emerald-400 mb-4 sm:mb-6">
             Direct Channels & Links
           </h2>
 
-          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-3 sm:gap-4">
             {DIRECT_LINKS.map((link) => {
               const Icon = link.icon;
               return (
@@ -356,14 +354,14 @@ const Contact = () => {
                   href={link.href}
                   target="_blank"
                   rel="noopener noreferrer"
-                  className="group flex items-center justify-between p-5 rounded-2xl bg-slate-100/70 dark:bg-zinc-950/60 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/10 transition-colors"
+                  className="group flex items-center justify-between p-4 sm:p-5 rounded-xl sm:rounded-2xl bg-slate-100/70 dark:bg-zinc-950/60 hover:bg-emerald-500/10 dark:hover:bg-emerald-500/10 transition-colors"
                 >
                   <div className="flex items-center gap-3">
                     <div className="p-2.5 rounded-xl bg-slate-200 dark:bg-zinc-800 text-slate-800 dark:text-zinc-200 group-hover:bg-emerald-500 group-hover:text-slate-950 transition-colors">
                       <Icon className="w-5 h-5" />
                     </div>
                     <div>
-                      <p className="font-bold text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
+                      <p className="font-bold text-sm sm:text-base text-slate-900 dark:text-white group-hover:text-emerald-600 dark:group-hover:text-emerald-400 transition-colors">
                         {link.label}
                       </p>
                       <p className="font-mono text-xs text-slate-500 dark:text-zinc-500">
@@ -379,7 +377,7 @@ const Contact = () => {
         </div>
 
         {/* 5. Footer */}
-        <div className="flex flex-col md:flex-row justify-between items-center text-xs font-mono text-slate-500 dark:text-zinc-500 gap-2 pt-6 border-t border-slate-200/40 dark:border-zinc-800/40">
+        <div className="flex flex-col sm:flex-row justify-between items-center text-xs font-mono text-slate-500 dark:text-zinc-500 gap-2 pt-6 border-t border-slate-200/40 dark:border-zinc-800/40">
           <span>© {new Date().getFullYear()} ANSHUL KUMAR GODIWAR</span>
           <span className="text-emerald-600 dark:text-emerald-400/80">Available for Opportunities</span>
         </div>

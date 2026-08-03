@@ -291,18 +291,18 @@ export const AnimatedThemeToggler = ({
 
   return (
     <button
-      type="button"
-      ref={buttonRef}
-      onClick={toggleTheme}
-      className={cn(className)}
-      {...props}
-    >
-      {isDark ? (
-        <Sun className="w-[1.8vw] h-[1.8vw]" />
-      ) : (
-        <Moon className="w-[1.8vw] h-[1.8vw]" />
-      )}
-      <span className="sr-only">Toggle theme</span>
-    </button>
+  type="button"
+  ref={buttonRef}
+  onClick={toggleTheme}
+  className={cn(className)}
+  {...props}
+>
+  {isDark ? (
+    <Sun className="w-[6vw] h-[6vw] sm:w-[3.5vw] sm:h-[3.5vw] lg:w-[1.8vw] lg:h-[1.8vw] transition-transform duration-300" />
+  ) : (
+    <Moon className="w-[6vw] h-[6vw] sm:w-[3.5vw] sm:h-[3.5vw] lg:w-[1.8vw] lg:h-[1.8vw] transition-transform duration-300" />
+  )}
+  <span className="sr-only">Toggle theme</span>
+</button>
   );
 };

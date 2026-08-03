@@ -14,13 +14,16 @@ const Stairs = ({ children }: { children: React.ReactNode }) => {
   const pageRef = useRef<HTMLDivElement>(null);
   const isInitialLoad = useRef(true);
 
-  // Register cover trigger for link navigation
+  // Register cover trigger for manual link navigation
   useEffect(() => {
     stairTriggerRef.current = (onCovered: () => void) => {
       gsap.killTweensOf(".stair");
       const tl = gsap.timeline();
 
-      tl.set(stairParentRef.current, { display: "block" });
+      tl.set(stairParentRef.current, {
+        display: "block",
+        pointerEvents: "auto", // Block user clicks during cover animation
+      });
       tl.set(".stair", { height: "0%", y: "0%" });
 
       tl.to(".stair", {
@@ -41,25 +44,28 @@ const Stairs = ({ children }: { children: React.ReactNode }) => {
 
       if (isInitialLoad.current) {
         // 1. INITIAL SITE LOAD:
-        // CSS has already covered the viewport with h-full stairs instantly on HTML paint.
-        // We only slide stairs away to reveal the page.
+        // Pure CSS has already covered the viewport instantly on HTML paint.
+        // Slide stairs away to reveal the initial page.
         isInitialLoad.current = false;
 
         const tl = gsap.timeline();
         tl.to(".stair", {
           y: "100%",
           duration: 0.5,
-          delay: 0.1, // Smooth buffer so hydration finishes cleanly behind cover
+          delay: 0.1, // Buffer while hydration finishes cleanly
           stagger: { amount: -0.2 },
           ease: "power2.inOut",
           onComplete: () => {
-            gsap.set(stairParentRef.current, { display: "none" });
+            gsap.set(stairParentRef.current, {
+              display: "none",
+              pointerEvents: "none",
+            });
             gsap.set(".stair", { height: "0%", y: "0%" });
           },
         });
       } else if (isManualTransition.current) {
         // 2. MANUAL LINK CLICK NAVIGATION:
-        // Screen is already covered via navigateTo -> slide stairs away to reveal new route
+        // Screen is covered -> slide stairs away to reveal new route
         const tl = gsap.timeline();
 
         tl.to(".stair", {
@@ -69,7 +75,10 @@ const Stairs = ({ children }: { children: React.ReactNode }) => {
           stagger: { amount: -0.2 },
           ease: "power2.inOut",
           onComplete: () => {
-            gsap.set(stairParentRef.current, { display: "none" });
+            gsap.set(stairParentRef.current, {
+              display: "none",
+              pointerEvents: "none",
+            });
             gsap.set(".stair", { height: "0%", y: "0%" });
             isManualTransition.current = false;
           },
@@ -79,7 +88,10 @@ const Stairs = ({ children }: { children: React.ReactNode }) => {
         // Run full cover -> reveal sequence
         const tl = gsap.timeline();
 
-        tl.set(stairParentRef.current, { display: "block" });
+        tl.set(stairParentRef.current, {
+          display: "block",
+          pointerEvents: "auto", // Lock UI interaction
+        });
         tl.set(".stair", { height: "0%", y: "0%" });
 
         tl.to(".stair", {
@@ -98,6 +110,7 @@ const Stairs = ({ children }: { children: React.ReactNode }) => {
 
         tl.to(stairParentRef.current, {
           display: "none",
+          pointerEvents: "none",
           onComplete: () => {
             gsap.set(".stair", { height: "0%", y: "0%" });
           },
@@ -110,19 +123,19 @@ const Stairs = ({ children }: { children: React.ReactNode }) => {
   return (
     <div className="relative min-h-screen w-full overflow-x-hidden">
       {/* 
-        Default visible (no 'hidden' class) and '.stair' elements set to 'h-full'.
-        This ensures pure CSS covers the viewport before JS/GSAP executes.
+        Default visible overlay.
+        Pure CSS covers viewport before JS/GSAP hydration executes.
       */}
       <div
         ref={stairParentRef}
-        className="fixed inset-0 z-[100] h-screen w-screen pointer-events-none"
+        className="fixed inset-0 z-[100] h-dvh w-screen pointer-events-auto"
       >
         <div className="h-full w-full flex">
-          <div className="stair h-full w-1/5  bg-emerald-500"></div>
-          <div className="stair h-full w-1/5  bg-emerald-500"></div>
-          <div className="stair h-full w-1/5  bg-emerald-500"></div>
-          <div className="stair h-full w-1/5  bg-emerald-500"></div>
-          <div className="stair h-full w-1/5  bg-emerald-500"></div>
+          <div className="stair h-full w-1/5 bg-emerald-500 will-change-transform"></div>
+          <div className="stair h-full w-1/5 bg-emerald-500 will-change-transform"></div>
+          <div className="stair h-full w-1/5 bg-emerald-500 will-change-transform"></div>
+          <div className="stair h-full w-1/5 bg-emerald-500 will-change-transform"></div>
+          <div className="stair h-full w-1/5 bg-emerald-500 will-change-transform"></div>
         </div>
       </div>
 

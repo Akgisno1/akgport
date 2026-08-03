@@ -4,7 +4,6 @@ import React, { useEffect, useRef, useState } from "react";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
-import Link from "next/link";
 import { TransitionLink } from "@/context/NavContext";
 
 gsap.registerPlugin(ScrollTrigger);
@@ -57,12 +56,15 @@ const Home = () => {
     return () => clearTimeout(timeoutId);
   }, [typedText, isDeleting, phraseIndex, isStarted]);
 
-  // Mouse Movement: Keeps boxes fixed, shifts ONLY the inner text in 3D space
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  // Mouse/Touch Movement: Keeps boxes fixed, shifts ONLY the inner text in 3D space
+  const handlePointerMove = (
+    clientX: number,
+    clientY: number
+  ) => {
     if (!containerRef.current) return;
     const { left, top, width, height } = containerRef.current.getBoundingClientRect();
-    const x = (e.clientX - left - width / 2) / (width / 2); // -1 to 1
-    const y = (e.clientY - top - height / 2) / (height / 2); // -1 to 1
+    const x = (clientX - left - width / 2) / (width / 2); // -1 to 1
+    const y = (clientY - top - height / 2) / (height / 2); // -1 to 1
 
     gsap.to([badgeText1Ref.current, badgeText2Ref.current], {
       rotateY: x * 25,
@@ -75,7 +77,17 @@ const Home = () => {
     });
   };
 
-  const handleMouseLeave = () => {
+  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+    handlePointerMove(e.clientX, e.clientY);
+  };
+
+  const handleTouchMove = (e: React.TouchEvent<HTMLDivElement>) => {
+    if (e.touches[0]) {
+      handlePointerMove(e.touches[0].clientX, e.touches[0].clientY);
+    }
+  };
+
+  const handlePointerLeave = () => {
     gsap.to([badgeText1Ref.current, badgeText2Ref.current], {
       rotateY: 0,
       rotateX: 0,
@@ -86,7 +98,7 @@ const Home = () => {
     });
   };
 
-  // GSAP Entrance Timeline (2-second initial delay)
+  // GSAP Entrance Timeline (1.25s initial delay preserved)
   useGSAP(
     () => {
       const tl = gsap.timeline({ delay: 1.25 });
@@ -142,13 +154,15 @@ const Home = () => {
     <div
       ref={containerRef}
       onMouseMove={handleMouseMove}
-      onMouseLeave={handleMouseLeave}
-      className="relative w-[100vw] min-h-[100vh] flex flex-col justify-between p-[3vw] overflow-hidden select-none"
+      onTouchMove={handleTouchMove}
+      onMouseLeave={handlePointerLeave}
+      onTouchEnd={handlePointerLeave}
+      className="relative w-[100vw] min-h-[100vh] flex flex-col justify-between p-[5vw] sm:p-[4vw] lg:p-[3vw] overflow-hidden select-none"
     >
       {/* Top Header - Rotating AKG Branding */}
-      <div className="w-full flex justify-start items-center z-10">
+      <div className="w-full flex justify-start items-center z-10 pt-[2vw] sm:pt-[1vw] lg:pt-0">
         <div
-          className="flex gap-[0.4vw] text-emerald-500 font-extrabold text-[2.8vw] tracking-wider cursor-default font-rubik"
+          className="flex gap-[1vw] sm:gap-[0.6vw] lg:gap-[0.4vw] text-emerald-500 font-extrabold text-[8vw] sm:text-[5vw] lg:text-[2.8vw] tracking-wider cursor-default font-rubik "
           style={{ perspective: "1000px" }}
         >
           {AKG_LETTERS.map((letter) => (
@@ -164,15 +178,15 @@ const Home = () => {
       </div>
 
       {/* Main Hero Content */}
-      <div className="flex-1 flex flex-col justify-center max-w-[88vw] mx-auto w-full py-[2vw]">
+      <div className="flex-1 flex flex-col justify-center max-w-[92vw] sm:max-w-[90vw] lg:max-w-[88vw] mx-auto w-full py-[6vw] sm:py-[4vw] lg:py-[2vw]">
         {/* Headline */}
         <h1
           ref={headlineRef}
-          className="text-[5vw] font-black font-mont text-slate-900 dark:text-white leading-[1.18] tracking-tight mb-[2.5vw]"
+          className="text-[8.5vw] sm:text-[6.5vw] lg:text-[5vw] font-black font-mont text-slate-900 dark:text-white leading-[1.25] sm:leading-[1.2] lg:leading-[1.18] tracking-tight mb-[6vw] sm:mb-[4vw] lg:mb-[2.5vw]"
         >
           Crafting Scalable{" "}
           {/* Box 1 (Fixed) -> Full-Stack */}
-          <span className="inline-block bg-slate-900 dark:bg-white px-[1.8vw] py-[0.4vw] rounded-[1.5vw] shadow-2xl my-[0.2vw] relative overflow-hidden align-middle">
+          <span className="inline-block bg-slate-900 dark:bg-white px-[4vw] py-[1vw] sm:px-[2.5vw] sm:py-[0.6vw] lg:px-[1.8vw] lg:py-[0.4vw] rounded-[3vw] sm:rounded-[2vw] lg:rounded-[1.5vw] shadow-2xl my-[1vw] sm:my-[0.5vw] lg:my-[0.2vw] relative overflow-hidden align-middle">
             {/* Text 1 (Moves) */}
             <span
               ref={badgeText1Ref}
@@ -184,7 +198,7 @@ const Home = () => {
           </span>{" "}
           Apps with{" "}
           {/* Box 2 (Fixed) -> Precision */}
-          <span className="inline-block bg-slate-900 dark:bg-white px-[1.8vw] py-[0.4vw] rounded-[1.5vw] shadow-2xl my-[0.2vw] relative overflow-hidden align-middle">
+          <span className="inline-block bg-slate-900 dark:bg-white px-[4vw] py-[1vw] sm:px-[2.5vw] sm:py-[0.6vw] lg:px-[1.8vw] lg:py-[0.4vw] rounded-[3vw] sm:rounded-[2vw] lg:rounded-[1.5vw] shadow-2xl my-[1vw] sm:my-[0.5vw] lg:my-[0.2vw] relative overflow-hidden align-middle">
             {/* Text 2 (Moves) */}
             <span
               ref={badgeText2Ref}
@@ -197,16 +211,16 @@ const Home = () => {
         </h1>
 
         {/* Subtitle & Action Area */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[2.5vw] items-end mt-[1vw]">
+        <div className="grid grid-cols-1 lg:grid-cols-2 gap-[6vw] sm:gap-[4vw] lg:gap-[2.5vw] items-end mt-[2vw] sm:mt-[1.5vw] lg:mt-[1vw]">
           {/* Typewriter text */}
-          <div ref={subtextRef} className="space-y-[0.6vw]">
-            <p className="text-[1.5vw] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-tiny">
+          <div ref={subtextRef} className="space-y-[1.5vw] sm:space-y-[1vw] lg:space-y-[0.6vw]">
+            <p className="text-[3.5vw] sm:text-[2.2vw] lg:text-[1.5vw] font-bold uppercase tracking-widest text-emerald-600 dark:text-emerald-400 font-tiny">
               Interactive Portfolio
             </p>
-            <div className="text-[1.5vw] font-medium text-slate-700 dark:text-slate-300 min-h-[3.5vw] flex items-center font-mont">
+            <div className="text-[4vw] sm:text-[2.5vw] lg:text-[1.5vw] font-medium text-slate-700 dark:text-slate-300 min-h-[12vw] sm:min-h-[6vw] lg:min-h-[3.5vw] flex items-center font-mont">
               <span>{typedText}</span>
               {isStarted && (
-                <span className="animate-pulse ml-[0.3vw] text-emerald-500 font-bold">
+                <span className="animate-pulse ml-[0.8vw] sm:ml-[0.5vw] lg:ml-[0.3vw] text-emerald-500 font-bold">
                   |
                 </span>
               )}
@@ -216,16 +230,16 @@ const Home = () => {
           {/* Action Buttons */}
           <div
             ref={buttonsRef}
-            className="flex flex-wrap items-center gap-[1.2vw] lg:justify-end"
+            className="flex flex-col sm:flex-row items-stretch sm:items-center gap-[3.5vw] sm:gap-[2vw] lg:gap-[1.2vw] lg:justify-end"
           >
             {/* Primary Button */}
             <TransitionLink
               href="projects"
-              className="group relative inline-flex items-center gap-[1vw] px-[2.2vw] py-[0.9vw] rounded-[3vw] bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-[1.25vw] shadow-xl hover:shadow-emerald-500/20 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden"
+              className="group relative inline-flex items-center justify-center sm:justify-start gap-[2.5vw] sm:gap-[1.5vw] lg:gap-[1vw] px-[6vw] py-[3vw] sm:px-[4vw] sm:py-[1.8vw] lg:px-[2.2vw] lg:py-[0.9vw] rounded-[6vw] sm:rounded-[4vw] lg:rounded-[3vw] bg-slate-900 dark:bg-white text-white dark:text-slate-950 font-bold text-[3.8vw] sm:text-[2.2vw] lg:text-[1.25vw] shadow-xl hover:shadow-emerald-500/20 hover:scale-105 active:scale-95 transition-all duration-300 overflow-hidden text-center"
             >
               <span className="absolute inset-0 w-full h-full bg-gradient-to-r from-emerald-500/20 to-teal-500/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300" />
               <span className="relative z-10">Explore Projects</span>
-              <span className="relative z-10 w-[2.5vw] h-[2.5vw] rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-[1.1vw] group-hover:translate-x-[0.3vw] group-hover:rotate-45 transition-transform duration-300">
+              <span className="relative z-10 w-[7vw] h-[7vw] sm:w-[4vw] sm:h-[4vw] lg:w-[2.5vw] lg:h-[2.5vw] rounded-full bg-emerald-500 text-slate-950 flex items-center justify-center font-bold text-[3.5vw] sm:text-[2vw] lg:text-[1.1vw] group-hover:translate-x-[0.3vw] group-hover:rotate-45 transition-transform duration-300">
                 →
               </span>
             </TransitionLink>
@@ -233,7 +247,7 @@ const Home = () => {
             {/* Secondary Button */}
             <TransitionLink
               href="about"
-              className="group relative inline-flex items-center gap-[0.7vw] px-[2.2vw] py-[0.9vw] rounded-[3vw] border-[0.18vw] border-slate-900 dark:border-white text-slate-900 dark:text-white font-bold text-[1.25vw] overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95"
+              className="group relative inline-flex items-center justify-center gap-[2vw] sm:gap-[1vw] lg:gap-[0.7vw] px-[6vw] py-[3vw] sm:px-[4vw] sm:py-[1.8vw] lg:px-[2.2vw] lg:py-[0.9vw] rounded-[6vw] sm:rounded-[4vw] lg:rounded-[3vw] border-[0.4vw] sm:border-[0.25vw] lg:border-[0.18vw] border-slate-900 dark:border-white text-slate-900 dark:text-white font-bold text-[3.8vw] sm:text-[2.2vw] lg:text-[1.25vw] overflow-hidden transition-all duration-300 hover:scale-105 active:scale-95 text-center"
             >
               <span className="absolute inset-0 bg-slate-900 dark:bg-white translate-y-full group-hover:translate-y-0 transition-transform duration-300 ease-out" />
               <span className="relative z-10 group-hover:text-white dark:group-hover:text-slate-950 transition-colors duration-300">
