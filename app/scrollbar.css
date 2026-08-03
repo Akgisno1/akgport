@@ -8,13 +8,13 @@
 
 /* Scrollbar thumb (the actual scrolling element) */
 ::-webkit-scrollbar-thumb {
-  background: linear-gradient(white, rgb(20, 184, 166));
+  background: linear-gradient(white, rgb(20, 184, 88));
   border-radius: 10px;
 }
 
 /* Scrollbar thumb when hovered */
 ::-webkit-scrollbar-thumb:active {
-  background: #f59e0b;
+  background: #caf50b;
 }
 
 /* Scrollbar track (the area the scrollbar slides in) */

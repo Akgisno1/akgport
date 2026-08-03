@@ -4,7 +4,7 @@ import "@/app/globals.css";
 import "@/app/scrollbar.css";
 import { Analytics } from "@vercel/analytics/react";
 
-import { Toaster } from "@/components/ui/toaster";
+
 import Stairs from "@/components/common/Stairs";
 import NavContext from "@/context/NavContext";
 import { ThemeContextProvider } from "@/context/ThemeContext";
@@ -36,7 +36,7 @@ export default function RootLayout({
               <FullScreenNav />
               {children}
 
-              <Toaster />
+              
               <Analytics />
             </Stairs>
           </NavContext>

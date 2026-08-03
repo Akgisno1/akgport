@@ -118,11 +118,11 @@ const Stairs = ({ children }: { children: React.ReactNode }) => {
         className="fixed inset-0 z-[100] h-screen w-screen pointer-events-none"
       >
         <div className="h-full w-full flex">
-          <div className="stair h-full w-1/5 border-y-4 bg-slate-50 dark:bg-zinc-950 border-y-emerald-500"></div>
-          <div className="stair h-full w-1/5 border-y-4 bg-slate-50 dark:bg-zinc-950 border-y-emerald-500"></div>
-          <div className="stair h-full w-1/5 border-y-4 bg-slate-50 dark:bg-zinc-950 border-y-emerald-500"></div>
-          <div className="stair h-full w-1/5 border-y-4 bg-slate-50 dark:bg-zinc-950 border-y-emerald-500"></div>
-          <div className="stair h-full w-1/5 border-y-4 bg-slate-50 dark:bg-zinc-950 border-y-emerald-500"></div>
+          <div className="stair h-full w-1/5  bg-emerald-500"></div>
+          <div className="stair h-full w-1/5  bg-emerald-500"></div>
+          <div className="stair h-full w-1/5  bg-emerald-500"></div>
+          <div className="stair h-full w-1/5  bg-emerald-500"></div>
+          <div className="stair h-full w-1/5  bg-emerald-500"></div>
         </div>
       </div>
 

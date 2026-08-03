@@ -1,5 +1,6 @@
 import Home from "@/components/Home";
-import { AuroraBackground } from "@/components/ui/aurora-background";
+import { AuroraBackground } from "@/components/magicui/aurora-background";
+
 
 export default function Page() {
   return (
