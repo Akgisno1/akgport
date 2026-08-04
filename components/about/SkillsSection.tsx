@@ -27,54 +27,77 @@ const SKILL_CATEGORIES = [
       "figma",
     ],
     names: [
-      "TypeScript",
-      "JavaScript",
       "React.js",
       "Next.js",
+      "TypeScript",
+      "JavaScript (ES6+)",
       "Tailwind CSS",
       "HTML5 / CSS3",
       "GSAP Animations",
       "Redux Toolkit",
+      "DOM Manipulation",
       "Figma",
     ],
   },
   {
     id: "02",
-    label: "Backend",
+    label: "Backend & Systems",
     icons: [
       "nodedotjs",
       "express",
-      "springboot",
       "java",
-      "nextdotjs",
-      "prisma",
+      "python",
+      "cplusplus",
+      "springboot",
     ],
     names: [
       "Node.js",
       "Express.js",
       "Java",
-      "Spring Boot",
+      "C++",
+      "Python",
       "REST APIs",
-      "Server Actions",
-      "Microservices",
+      "Async / Promises",
+      "Data Structures & Algorithms (400+)",
+      "OOP & System Design",
+      "Distributed Systems",
     ],
   },
   {
     id: "03",
-    label: "Databases",
-    icons: ["postgresql", "mongodb", "mysql", "prisma", "redis", "supabase"],
+    label: "AI & GenAI",
+    icons: [
+      "openai",
+      "python",
+      "langchain",
+      "githubcopilot",
+      "anthropic",
+    ],
     names: [
-      "PostgreSQL",
-      "MongoDB",
-      "MySQL",
-      "Prisma ORM",
-      "Redis",
-      "Supabase",
-      "Database Design",
+      "OpenAI API & Claude",
+      "RAG Pipelines",
+      "Embeddings & Vector Search",
+      "Prompt Engineering",
+      "ChromaDB",
+      "LangChain & LangGraph",
+      "Cursor & GitHub Copilot",
     ],
   },
   {
     id: "04",
+    label: "Databases",
+    icons: ["postgresql", "mongodb", "mysql", "supabase", "redis", "prisma"],
+    names: [
+      "PostgreSQL",
+      "MongoDB (NoSQL)",
+      "MySQL (Relational)",
+      "Supabase",
+      "Redis Caching",
+      "SQL & Database Design",
+    ],
+  },
+  {
+    id: "05",
     label: "Cloud & DevOps",
     icons: [
       "amazonwebservices",
@@ -83,13 +106,14 @@ const SKILL_CATEGORIES = [
       "github",
       "githubactions",
       "vercel",
+      "gnubash",
     ],
     names: [
-      "AWS (EC2, S3)",
+      "AWS (S3, EC2, Lambda)",
       "Docker",
-      "CI/CD Pipelines",
-      "GitHub Actions",
-      "Git / GitHub",
+      "CI/CD (GitHub Actions)",
+      "Git Workflows (PRs & Code Reviews)",
+      "Bash Scripting",
       "Vercel Deployment",
     ],
   },
@@ -167,7 +191,6 @@ export const SkillsSection = () => {
       className="relative h-screen w-screen bg-slate-50 dark:bg-zinc-950 overflow-hidden font-rubik select-none"
     >
       {/* INTERACTIVE UNDERLYING SKILLS UI */}
-      {/* MOBILE: pt-[10vw] top padding & justify-start so tabs sit directly above card */}
       <div className="absolute inset-0 flex flex-col justify-start lg:justify-between pt-[10vw] pb-[4vw] px-[4vw] lg:p-[4vw] z-10 max-w-[92vw] lg:max-w-[85vw] mx-auto">
         
         {/* HEADER & CATEGORY TABS */}
@@ -198,7 +221,7 @@ export const SkillsSection = () => {
           </div>
         </div>
 
-        {/* MAIN CONTENT AREA (MOBILE: mt-[2vw] tight gap to tabs, h-[70vh] longer card height) */}
+        {/* MAIN CONTENT AREA */}
         <div className="relative grid overflow-hidden max-sm:overflow-hidden grid-cols-1 lg:grid-cols-12 gap-[3vw] items-center mt-[2vw] lg:my-auto w-full h-[70vh] lg:h-[60vh] bg-white/60 dark:bg-zinc-900/60 backdrop-blur-md rounded-[4vw] sm:rounded-[2.5vw] lg:rounded-[1.8vw] p-[4vw] lg:p-[2.8vw] shadow-2xl overflow-y-auto lg:overflow-hidden">
           {/* EMERALD WIPE OVERLAY */}
           <div
@@ -236,13 +259,13 @@ export const SkillsSection = () => {
         FRONTEND
       </div>
       <div className="banner-2 banner-right absolute top-[25vh] left-0 w-screen h-[25vh] bg-zinc-950 text-emerald-400 font-mont font-black text-[7vw] sm:text-[5.5vw] lg:text-[4.5vw] flex items-center justify-center z-40 shadow-2xl">
-        BACKEND
+        BACKEND & SYSTEMS
       </div>
       <div className="banner-3 banner-left absolute top-[50vh] left-0 w-screen h-[25vh] bg-emerald-500 text-slate-950 font-mont font-black text-[7vw] sm:text-[5.5vw] lg:text-[4.5vw] flex items-center justify-center z-40 shadow-2xl">
-        DATABASES
+        AI & GENAI
       </div>
       <div className="banner-4 banner-right absolute top-[75vh] left-0 w-screen h-[25vh] bg-zinc-950 text-emerald-400 font-mont font-black text-[7vw] sm:text-[5.5vw] lg:text-[4.5vw] flex items-center justify-center z-40 shadow-2xl">
-        CLOUD & DEVOPS
+        DATABASES & DEVOPS
       </div>
     </div>
   );

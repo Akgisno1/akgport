@@ -189,7 +189,7 @@ export const BentoSection = () => {
               Hackathon Contender
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2 font-light leading-relaxed">
-              Engineered high-concurrency full-stack MVPs under strict 24-48 hour hackathon timelines with multi-disciplinary team collaboration.
+              Led a 6 memeber team for Smart India Hackathon, Engineered a QR based attendance system for government schools to reducing attendance time by 60% and solved a real world problem.
             </p>
           </div>
           <div className="mt-6 text-[11px] sm:text-xs font-mono text-emerald-500 font-bold uppercase tracking-wider">
@@ -212,12 +212,10 @@ export const BentoSection = () => {
               Positive Interventions
             </h3>
             <p className="text-xs sm:text-sm text-slate-500 dark:text-slate-400 mt-2 font-light leading-relaxed">
-              Contributed to open-source UI design, web accessibility, and digital platforms for social impact and community wellness initiatives.
+              Contributed to an animal NGO by through management and ground support in 2 promotional events and weekly feeding drives.
             </p>
           </div>
-          <div className="mt-6 inline-block px-3 py-1 bg-emerald-500/10 text-emerald-600 dark:text-emerald-400 rounded-full text-xs font-mono font-bold w-fit">
-            🌱 TECH FOR GOOD
-          </div>
+          
         </div>
 
         {/* CARD 7: AWS Official Certification */}

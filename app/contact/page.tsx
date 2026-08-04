@@ -9,8 +9,9 @@ import {
   Mail,
   FileText,
 } from "lucide-react";
-import { createContact, ContactFormData } from "@/lib/contact.action";
+import { createContact } from "@/lib/contact.action";
 import { ACCORDION_DATA } from "@/data/contact";
+import { ContactFormData } from "@/lib/formSchema";
 
 // Clean inline Brand SVGs
 const LinkedinIcon = ({ className = "w-5 h-5" }: { className?: string }) => (
@@ -54,13 +55,13 @@ const DIRECT_LINKS = [
   },
   {
     label: "Email",
-    href: "mailto:contact@anshul.dev",
-    subtext: "contact@anshul.dev",
+    href: "https://mail.google.com/mail/?view=cm&fs=1&to=anshulkumargodiwar2001@gmail.com",
+    subtext: "@anshulkumar",
     icon: Mail,
   },
   {
     label: "Resume",
-    href: "#",
+    href: "https://www.dropbox.com/preview/FullStackDeveloperResume.pdf?context=content_suggestions&role=personal&_p_luid=6becadd5",
     subtext: "Download PDF",
     icon: FileText,
   },

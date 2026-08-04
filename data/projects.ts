@@ -1,108 +1,211 @@
 import { ProjectItem } from "@/components/projects/ProjectCard";
 
-export const PROJECTS_DATA: { image1: ProjectItem; image2: ProjectItem }[] = [
+export const PROJECTS_DATA: { image1: ProjectItem; image2?: ProjectItem }[] = [
   {
     image1: {
       id: "QUEUEOVERFLOW",
       title: "QueueOverflow",
-      image:
-        "https://k72.ca/uploads/caseStudies/PJC/Thumbnails/PJC_SiteK72_Thumbnail_1280x960-1280x960.jpg",
+      image: "/queueoverflow.PNG",
       tags: ["Full-Stack", "RAG & GenAI", "Microservices"],
       description:
-        "An AI-augmented developer community platform featuring instant retrieval-augmented generation answers, microservice-based architecture, and real-time thread synchronization.",
+        "An AI-augmented developer community platform engineered with microservices architecture. Features Retrieval-Augmented Generation (RAG) for instant technical solutions, real-time thread sync, and high-performance semantic search across knowledge bases.",
       techStack: [
-        { name: "Full-Stack", iconName: "layers" },
-        { name: "RAG & GenAI", iconName: "bot" },
-        { name: "Microservices", iconName: "cpu" },
-        { name: "Spring Boot", iconName: "server" },
-        { name: "PostgreSQL", iconName: "database" },
-      ],
-      liveUrl: "https://queueoverflow.com",
-      githubUrl: "https://github.com/akgisno1/queueoverflow",
-    },
-    image2: {
-      id: "WIDESCAPE",
-      title: "Widescape",
-      image:
-        "https://k72.ca/uploads/caseStudies/WIDESCAPE/WS---K72.ca---Thumbnail-1280x960.jpg",
-      tags: ["Next.js", "Tailwind CSS", "GSAP"],
-      description:
-        "High-performance landing experience built with interactive 3D canvas objects, custom page transitions, and responsive scroll dynamics.",
-      techStack: [
-        { name: "Next.js", iconName: "code2" },
-        { name: "Tailwind CSS", iconName: "sparkles" },
-        { name: "GSAP", iconName: "zap" },
-      ],
-      liveUrl: "https://widescape.ca",
-      githubUrl: "https://github.com/akgisno1/widescape",
-    },
-  },
-  {
-    image1: {
-      id: "OKA-EXPERIENCE",
-      title: "Oka Experience",
-      image:
-        "https://k72.ca/uploads/caseStudies/OKA/OKA_thumbnail-1280x960.jpg",
-      tags: ["Spring Boot", "PostgreSQL", "Docker"],
-      description:
-        "Enterprise-grade service management suite handling automated scheduling, transactional workflows, and real-time telemetry analytics.",
-      techStack: [
-        { name: "Spring Boot", iconName: "server" },
-        { name: "PostgreSQL", iconName: "database" },
-        { name: "Docker", iconName: "workflow" },
-      ],
-      liveUrl: "https://oka.ca",
-      githubUrl: "https://github.com/akgisno1/oka-backend",
-    },
-    image2: {
-      id: "OPTO-ANALYTICS",
-      title: "Opto Analytics",
-      image:
-        "https://k72.ca/uploads/caseStudies/Opto/thumbnailimage_opto-1280x960.jpg",
-      tags: ["TypeScript", "GraphQL", "Redis"],
-      description:
-        "Real-time data visualization dashboard monitoring distributed microservices latency, error counts, and resource utilization.",
-      techStack: [
+        { name: "Next.js", iconName: "server" },
         { name: "TypeScript", iconName: "terminal" },
-        { name: "GraphQL", iconName: "layers" },
-        { name: "Redis", iconName: "database" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "MongoDB", iconName: "database" },
+        { name: "RAG & LLMs", iconName: "cpu" },
+        { name: "Node.js", iconName: "workflow" },
+        { name: "Vector DB", iconName: "search" },
       ],
-      liveUrl: "https://opto-analytics.io",
-      githubUrl: "https://github.com/akgisno1/opto",
+      liveUrl: "https://queue-over-flow.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/QueueOverFlow",
+    },
+    image2: {
+      id: "Iphone Landing Page",
+      title: "iPhone 15 Pro Showcase",
+      image: "/APPLE.png",
+      tags: ["Animations", "3D", "Landing Page"],
+      description:
+        "High-impact 3D product experience replicating Apple's flagship landing page. Combines interactive WebGL 3D canvas objects with GSAP timeline sequencing for cinematic scrub-driven scroll animations.",
+      techStack: [
+        { name: "Next.js", iconName: "server" },
+        { name: "React", iconName: "code2" },
+        { name: "Three.js", iconName: "sparkles" },
+        { name: "GSAP", iconName: "zap" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "TypeScript", iconName: "terminal" },
+      ],
+      liveUrl: "https://apple-ashy.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/applelp",
     },
   },
   {
     image1: {
-      id: "CHALAXEUR",
-      title: "Chalaxeur Audio",
-      image:
-        "https://k72.ca/uploads/caseStudies/LAMAJEURE_-_Son_sur_mesure/chalaxeur-thumbnail_img-1280x960.jpg",
-      tags: ["Web Audio API", "React", "Canvas"],
+      id: "Rentify",
+      title: "Rentify",
+      image: "/Rentify.PNG",
+      tags: ["Full-Stack", "MERN Stack", "Real-Time"],
       description:
-        "Custom web-based audio synthesis tool enabling real-time sound spatialization, audio waveform visualization, and dynamic mixing.",
+        "Production-ready real estate portal designed to streamline tenant-landlord interactions. Features secure JWT authentication, automated listing pipelines, direct messaging workflows, and dynamic property filtering.",
       techStack: [
-        { name: "Web Audio API", iconName: "zap" },
         { name: "React", iconName: "code2" },
-        { name: "Canvas", iconName: "sparkles" },
+        { name: "Node.js", iconName: "workflow" },
+        { name: "Express", iconName: "server" },
+        { name: "MongoDB", iconName: "database" },
+        { name: "REST API", iconName: "globe" },
+        { name: "JWT Auth", iconName: "shield" },
+        { name: "Tailwind CSS", iconName: "layers" },
       ],
-      liveUrl: "https://chalaxeur.com",
-      githubUrl: "https://github.com/akgisno1/chalaxeur",
+      liveUrl: "https://rentify-8r7z.onrender.com/",
+      githubUrl: "https://github.com/Akgisno1/rentify",
     },
     image2: {
-      id: "SHELTON",
-      title: "Shelton Brand",
-      image:
-        "https://k72.ca/uploads/caseStudies/SHELTON/thumbnailimage_shelton-1280x960.jpg",
-      tags: ["E-Commerce", "Stripe API", "Next.js"],
+      id: "Stray To Stay",
+      title: "Stray to Stay",
+      image: "/straytostay.png",
+      tags: ["Full-Stack", "Community", "Adoption"],
       description:
-        "Bespoke e-commerce showcase featuring dynamic inventory sync, headless checkout flows, and tailored micro-animations.",
+        "Community-driven rescue platform bridging animal shelters with prospective adopters. Built with real-time shelter feeds, optimized image uploads, and localized rescue coordination tools.",
       techStack: [
-        { name: "E-Commerce", iconName: "layers" },
-        { name: "Stripe API", iconName: "zap" },
-        { name: "Next.js", iconName: "code2" },
+        { name: "Next.js", iconName: "server" },
+        { name: "TypeScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "MongoDB", iconName: "database" },
+        { name: "REST API", iconName: "globe" },
+        { name: "NextAuth", iconName: "shield" },
       ],
-      liveUrl: "https://shelton.ca",
-      githubUrl: "https://github.com/akgisno1/shelton",
+      liveUrl: "https://straytostay.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/straytostay",
+    },
+  },
+  {
+    image1: {
+      id: "PeakMall",
+      title: "PeakMall",
+      image: "/peakmall.png",
+      tags: ["Frontend", "Animations", "UI/UX"],
+      description:
+        "Commercial showcase featuring fluid spatial layouts, smooth scroll dynamics, zero layout shift, and refined dark-mode micro-interactions built for high-conversion web performance.",
+      techStack: [
+        { name: "Next.js", iconName: "server" },
+        { name: "TypeScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "Framer Motion", iconName: "sparkles" },
+        { name: "Lucide Icons", iconName: "layout" },
+      ],
+      liveUrl: "https://peakmall.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/peakmall",
+    },
+    image2: {
+      id: "Nike Landing Page",
+      title: "Nike Concept Store",
+      image: "/nike.png",
+      tags: ["Frontend", "React", "State Management"],
+      description:
+        "Interactive e-commerce portal with real-time footwear previews, dynamic color swatch switching, optimized cart state management, and seamless catalog filtering.",
+      techStack: [
+        { name: "React", iconName: "code2" },
+        { name: "JavaScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "Context API", iconName: "workflow" },
+        { name: "Vite", iconName: "zap" },
+      ],
+      liveUrl: "https://nike-phi-one.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/nike",
+    },
+  },
+  {
+    image1: {
+      id: "Habot",
+      title: "Habot Corporate Showcase",
+      image: "/habot.png",
+      tags: ["B2B Portal", "Landing Page", "Next.js"],
+      description:
+        "Enterprise B2B procurement portal designed with structured service breakdown grids, localized vendor matching features, and responsive layout architectures.",
+      techStack: [
+        { name: "Next.js", iconName: "server" },
+        { name: "TypeScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "Lucide Icons", iconName: "layout" },
+        { name: "Responsive CSS", iconName: "box" },
+      ],
+      liveUrl: "https://habot-pi.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/Habot",
+    },
+    image2: {
+      id: "Alabay",
+      title: "Alabay Showcase",
+      image: "/alabay.png",
+      tags: ["Handcrafted UI", "Frontend", "Animations"],
+      description:
+        "Bespoke landing web app featuring custom CSS layout animations, smooth scroll interactions, and high-fidelity visual asset orchestration for an immersive visual experience.",
+      techStack: [
+        { name: "React", iconName: "code2" },
+        { name: "JavaScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "Framer Motion", iconName: "sparkles" },
+        { name: "CSS Modules", iconName: "box" },
+      ],
+      liveUrl: "https://alabay-livid.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/alabay",
+    },
+  },
+  {
+    image1: {
+      id: "ISS Club",
+      title: "ISS Campus Club",
+      image: "/ISSclub.png",
+      tags: ["College Club", "Landing Page", "Next.js"],
+      description:
+        "Official university student chapter portal engineered to highlight tech workshops, executive team structures, upcoming event calendars, and member onboarding pipelines.",
+      techStack: [
+        { name: "Next.js", iconName: "server" },
+        { name: "TypeScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "React Hook Form", iconName: "workflow" },
+        { name: "Lucide Icons", iconName: "layout" },
+      ],
+      liveUrl: "https://iss-pi.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/iss",
+    },
+    image2: {
+      id: "Game Hub",
+      title: "Game Hub",
+      image: "/gameclub.png",
+      tags: ["Frontend", "REST API", "State & Filter"],
+      description:
+        "Comprehensive game discovery engine integrating the RAWG API. Features multi-parameter filtering by genre, gaming platform, and Metacritic score alongside custom skeleton loading UI states.",
+      techStack: [
+        { name: "React", iconName: "code2" },
+        { name: "Vite", iconName: "zap" },
+        { name: "TypeScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "RAWG API", iconName: "globe" },
+        { name: "Axios", iconName: "repeat" },
+      ],
+      liveUrl: "https://game-hub-umber-zeta.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/game-hub",
+    },
+  },
+  {
+    image1: {
+      id: "Anime Vault",
+      title: "Anime Vault",
+      image: "/animevault.png",
+      tags: ["Frontend", "Infinite Scroll", "API Fetching"],
+      description:
+        "High-performance media catalog web app implementing server-side render optimization, infinite scroll pagination, dynamic image lazy-loading, and staggered grid reveal animations.",
+      techStack: [
+        { name: "Next.js", iconName: "server" },
+        { name: "TypeScript", iconName: "terminal" },
+        { name: "Tailwind CSS", iconName: "layers" },
+        { name: "Server Actions", iconName: "workflow" },
+        { name: "REST API", iconName: "globe" },
+        { name: "Framer Motion", iconName: "sparkles" },
+      ],
+      liveUrl: "https://anime-vault-one-pearl.vercel.app/",
+      githubUrl: "https://github.com/Akgisno1/anime-vault",
     },
   },
 ];

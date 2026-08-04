@@ -13,7 +13,10 @@ if (typeof window !== "undefined") {
   gsap.registerPlugin(ScrollTrigger);
 }
 
-const FLAT_PROJECTS = PROJECTS_DATA.flatMap((row) => [row.image1, row.image2]);
+// Safely flatten projects and filter out undefined image2 instances
+const FLAT_PROJECTS = PROJECTS_DATA.flatMap((row) =>
+  [row.image1, row.image2].filter((p): p is ProjectItem => Boolean(p))
+);
 
 const Projects = () => {
   const [selectedProject, setSelectedProject] = useState<ProjectItem | null>(null);
@@ -98,12 +101,14 @@ const Projects = () => {
       ref={containerRef}
       className="relative min-h-[100dvh] lg:h-[100dvh] w-screen bg-slate-50 dark:bg-zinc-950 p-[5vw] lg:p-[4vw] flex flex-col justify-between items-center overflow-hidden text-slate-900 dark:text-white transition-colors duration-300 selection:bg-emerald-500 selection:text-white dark:selection:text-black"
     >
-      {/* Section Header - Moved down on Mobile */}
+      {/* Section Header */}
       <div className="w-full max-w-[90vw] lg:max-w-[82vw] flex justify-between items-center pb-[3vw] lg:pb-[1.5vw] z-30 pt-[14vw] sm:pt-[10vw] lg:pt-0 mb-[6vw] lg:mb-[2vw] border-b border-slate-200/60 dark:border-zinc-800/60 lg:border-none">
         <h2 className="font-mono text-[9vw] sm:text-[7vw] lg:text-[5.5vw] font-black leading-none uppercase tracking-tighter text-slate-900 dark:text-zinc-100">
           PROJECTS<span className="text-emerald-600 dark:text-emerald-500">.</span>
         </h2>
-        <span className="font-tiny text-[1.25vw] max-sm:text-[3vw] max-lg:text-[2vw] text-slate-400">Scroll down</span>
+        <span className="font-tiny text-[1.25vw] max-sm:text-[3vw] max-lg:text-[2vw] text-slate-400">
+          Scroll down
+        </span>
       </div>
 
       {/* Desktop Container: 2 Cards per Row (>= 1024px) */}
@@ -120,10 +125,12 @@ const Projects = () => {
               />
             </div>
             <div className="w-1/2 h-full">
-              <ProjectCard
-                project={row.image2}
-                onSelect={(p) => setSelectedProject(p)}
-              />
+              {row.image2 && (
+                <ProjectCard
+                  project={row.image2}
+                  onSelect={(p) => setSelectedProject(p)}
+                />
+              )}
             </div>
           </div>
         ))}
